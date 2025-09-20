@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="../assets/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forME Detail Page</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../functions.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div style="height: 20vh;">
+        <canvas id="starCanvas"></canvas>
+
+        <div class="navigation">
+            <a href="../index.html#works" class="nav-link">WORKS</a>
+            <a href="../index.html#about" class="nav-link">ABOUT</a>
+            <a href="../index.html#contact" class="nav-link">CONTACT</a>
+        </div>
+
+    </div> <!-- navigation div -->
+
+    <div class="project-page">
+        <div>
+            <div class="project-image">
+                <img class="main-image" src="../assets/forME-mockup.png">
+            </div>
+            <h1>forME</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Collaboration</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fullstack Developer</td>
+                        <td>Team of 4</td>
+                        <td>March 2023</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="project-sections">
+            <section>
+                <h2>Scenario</h2>
+                <div>
+                    <p>
+                        Easier interface and makes more sense for the project we wanted to create. Especially with
+                        trackers and medication.
+                        Spread awareness on the taboos of mental health, birth control, and taking medication.
+                        Create an app that’s practical, informative, and user friendly.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Solution</h2>
+                <div>
+                    <p>
+                        forME is a mobile app built for women to be educated about the medications / birth control going
+                        into their body.
+                        forME allows users to search for different medications and birth control options that are
+                        currently available.
+                        forME has a tracker function that allows users to track their medication and habits
+                    </p>
+                    <img class="side-image" src="../assets/forME_design.png">
+                </div>
+            </section>
+
+            <section>
+                <h2>Find Out More</h2>
+                <button onclick="window.open('https://devpost.com/software/forme-5h8m20', '_blank')">
+                    Devpost Link
+                </button>
+                <button onclick="window.open('https://github.com/al2231/iSchoolMVCWebApp', '_blank')">
+                    GitHub Link
+                </button>
+            </section>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <section id="contact">
+        <footer>
+            <div id="links-container">
+                <div class="email-card">
+                    <h3>CONNECT WITH ME</h3>
+                    <p>Feel free to reach out!</p>
+                    <a class="email" href="mailto:angiel.4work@gmail.com">Email Me ↗</a>
+                </div>
+
+                <div class="links">
+                    <h4>SOCIALS + MORE</h4>
+                    <a href="https://www.linkedin.com/in/angie-li-902082269/">
+                        <i class="fab fa-linkedin"></i> My LinkedIn
+                    </a>
+                    <a href="https://docs.google.com/document/d/1Wj7no1J77GqJvjqzcKh-HJBSZ5AbYYqCOfej4uKdKsk/edit?usp=sharing"
+                        target="_blank">
+                        <i class="fas fa-file-alt"></i> My Resume
+                    </a>
+                    <a href="https://github.com/al2231">
+                        <i class="fab fa-github"></i> My GitHub
+                    </a>
+                    <a href="projects.txt">
+                        <i class="fa-solid fa-calendar"></i> Project Archives
+                    </a>
+                </div>
+
+            </div>
+            <hr />
+            <div id="contact-bottom">
+
+                <div>
+                    <p id="time"></p>
+                    <p>© Angie Li <span id="copyright-year"></span></p>
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>

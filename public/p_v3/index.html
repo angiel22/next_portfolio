@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<!-- https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angie's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="functions.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+  <div class="aboutme">
+    <!-- navigation -->
+    <div class="navigation">
+      <a href="#about">ABOUT</a>
+      <a href="#works">WORKS</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+    <div class="opaque-bg animated fadeInDown">
+      <h1 style="color:#C0C7D3">ANGIE'S<span style="color:#1B52D7">/</span>PORTFOLIO</h1>
+      <p><span class="typing">Front-End Developer</span></p>
+    </div>
+
+    <!-- binary rain -->
+    <div id="binary-container">
+      <!-- Binary digits will be added here by JavaScript -->
+      <span class="binary-digit">0</span>
+      <!-- <span class="binary-digit">1</span>
+      <span class="binary-digit">0</span> -->
+    </div>
+  </div>
+
+  <!-- begin fullpage -->
+
+  <div id="fullpage">
+
+    <!-- begin section -->
+
+    <div class="skills" id="about">
+      <div class="text-content">
+        <h1>ABOUT ME</h1>
+        <p>
+          Hi, I'm Angie Li! I'm currently a student
+          @ Rochester Institute of Technology studying Web and Mobile Computing
+          , which means delving into both front and back-end design and development.
+        </p>
+      </div> <!-- End of Content Div-->
+      <div class="img-content">
+        <img src="assets/me25.jpg" alt="picture of Angie">
+        <div class="full-skillbar">
+          <div class="skillbar">
+            <div class="skillbar-title"> <!--style="background: #DD1E2F;"-->
+              <span> Web and Mobile Development with vanilla HTML, CSS, JS</span>
+            </div>
+            <div class="skillBarContainer">
+              <div class="skillBarValue value-90"></div>
+            </div>
+          </div> <!-- End Skill Bar -->
+
+          <div class="skillbar">
+            <div class="skillbar-title"> <!--style="background: #EBB035;"-->
+              <span>Creating Databases with MySQL and Connecting with Java</span>
+            </div>
+            <div class="skillBarContainer">
+              <div class="skillBarValue value-80"></div>
+            </div>
+          </div> <!-- End Skill Bar -->
+
+          <div class="skillbar">
+            <div class="skillbar-title"> <!--style="background: #218559;"-->
+              <span>php and Admin</span>
+            </div>
+            <div class="skillBarContainer">
+              <div class="skillBarValue value-70"></div>
+            </div>
+          </div> <!-- End Skill Bar -->
+
+          <div class="skillbar">
+            <div class="skillbar-title"> <!--style="background: #6840D4;"-->
+              <span>Using React.js and ASP.NET MVC</span>
+            </div>
+            <div class="skillBarContainer">
+              <div class="skillBarValue value-50"></div>
+            </div>
+          </div> <!-- End Skill Bar -->
+
+          <div class="skillbar">
+            <div class="skillbar-title"> <!--style="background: #AB4DD2;"-->
+              <span>APIs and Consuming Data</span>
+            </div>
+            <div class="skillBarContainer">
+              <div class="skillBarValue value-30"></div>
+            </div>
+          </div> <!-- End Skill Bar -->
+        </div>
+      </div> <!-- End of Image Content -->
+      <div id="spotify">
+        <h3>Current Playlist</h3>
+        <iframe style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/6prBHh5ssYnz8MWP7QKZLl?utm_source=generator" width="75%"
+          height="175" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+    <!-- end section -->
+
+    <!-- begin section -->
+    <div id="works">
+      <div class="banner">
+        <p class="scrolling-text">
+          Angie * My Projects * Front-End Developer * UX Enthusiast *
+        </p>
+      </div>
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div id="content"></div>
+
+          <script>
+            fetch("projects/bhase.html")
+              .then(response => response.text())
+              .then(data => document.getElementById("content").innerHTML = data)
+              .catch(error => console.error("Error loading content:", error));
+          </script>
+        </div>
+
+        <div class="mySlides fade">
+          <div id="content2"></div>
+
+          <script>
+            fetch("projects/ischool.html")
+              .then(response => response.text())
+              .then(data => document.getElementById("content2").innerHTML = data)
+              .catch(error => console.error("Error loading content:", error));
+          </script>
+        </div>
+
+        <div class="mySlides fade">
+          <div id="content3"></div>
+
+          <script>
+            fetch("projects/forME.html")
+              .then(response => response.text())
+              .then(data => document.getElementById("content3").innerHTML = data)
+              .catch(error => console.error("Error loading content:", error));
+          </script>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+
+        <br>
+
+        <div style="text-align:center; padding-bottom: 2em;">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+      </div>
+    </div>
+    <!-- end section -->
+  </div>
+  <!-- end fullpage-->
+  <div id="button-nav">
+    <ul>
+      <li><a href="/react23/">Portfolio 2023</a></li>
+      <li><a href="projects.txt">Project Archives</a></li>
+    </ul>
+  </div>
+
+  <!-- footer -->
+  <footer id="contact">
+    <div id="links-container">
+      <img src="./assets/bongo-cat-transparent.gif" alt="hacker cat">
+
+      <div class="links">
+        <h4>SITEMAP</h4>
+        <a href="#about">ABOUT</a>
+        <a href="#works">WORKS</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+
+      <div class="links">
+        <h4>SOCIALS + MORE</h4>
+        <a href="https://www.linkedin.com/in/angie-li-902082269/">
+          <i class="fab fa-linkedin"></i> My LinkedIn
+        </a>
+        <a href="https://docs.google.com/document/d/1Wj7no1J77GqJvjqzcKh-HJBSZ5AbYYqCOfej4uKdKsk/edit?usp=sharing"
+          target="_blank">
+          <i class="fas fa-file-alt"></i> My Resume
+        </a>
+        <a href="https://github.com/al2231">
+          <i class="fab fa-github"></i> My GitHub
+        </a>
+      </div>
+
+    </div>
+    <hr />
+    <div id="contact-bottom">
+      <p>
+        angiel.4work@gmail.com - 
+        <button class="contact" onclick="copyEmail()">CONNECT WITH ME</button>
+      </p>
+      <div>
+        <p id="time"></p>
+        <p>© Angie Li <span id="copyright-year"></span></p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="../assets/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iSchool Site Detail Page</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../functions.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div style="height: 20vh;">
+        <canvas id="starCanvas"></canvas>
+
+        <div class="navigation">
+            <a href="../index.html#works" class="nav-link">WORKS</a>
+            <a href="../index.html#about" class="nav-link">ABOUT</a>
+            <a href="../index.html#contact" class="nav-link">CONTACT</a>
+        </div>
+
+    </div> <!-- navigation div -->
+
+    <div class="project-page">
+        <div>
+            <div class="project-image">
+                <img class="main-image" src="../assets/ischool_main.png">
+            </div>
+            <h1>RIT iSchool Site Redesign</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Collaboration</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fullstack Developer</td>
+                        <td>Individual</td>
+                        <td>August 23 - December 23</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="project-sections">
+            <section>
+                <h2>Scenario</h2>
+                <div>
+                    <p>
+                        Enhance the user experience on the iSchool website by incorporating UI components, be they
+                        downloaded React components or self-created ones.
+                        The project requirements include implementing functionality to retrieve specific areas,
+                        ranging from core information initially displayed to on-demand details such as About, Degrees,
+                        Minors, Employment, People, and Courses.
+                        Interactive components for each section will be designed or utilized to present information
+                        dynamically.
+                    </p>
+
+                    <p>
+                        Utilizing the IST RIT API (available at <a href="http://www.ist.rit.edu/api/"
+                            target="_blank">http://www.ist.rit.edu/api/</a>) was integral,
+                        and fetching data using the fetch() function,
+                        along with a proxy server for handling JSON from the web service, is essential.
+                        Elevating the site's aesthetics by incorporating professional graphics, styles, and engaging
+                        animations or interactions.
+                        To further extend the project, integrating at least three external UI React components that
+                        contribute to its functionality.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Solution</h2>
+                <div>
+                    <p>
+                        Upon completion, generate a production build and provide a working URL for evaluation.
+                        Additionally, creating a C# front-end that interfaces with the same RESTful service.
+                        For the C# front-end, emphasize the use of jQuery plugins to enhance the UI,
+                        requiring the incorporation of more than just jQueryUI—specifically,
+                        at least two additional plugins to diversify the user interface and provide a well-rounded
+                        experience.
+                    </p>
+                    <img class="side-image" src="../assets/ischool_people.png">
+                </div>
+            </section>
+
+            <section>
+                <h2>Find Out More</h2>
+                <button onclick="window.open('https://people.rit.edu/al2231/ISTE340/project2/', '_blank')">
+                    React Playable Link
+                </button>
+                <button onclick="window.open('https://github.com/al2231/iSchoolMVCWebApp', '_blank')">
+                    MVC Files Github Link
+                </button>
+            </section>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <section id="contact">
+        <footer>
+            <div id="links-container">
+                <div class="email-card">
+                    <h3>CONNECT WITH ME</h3>
+                    <p>Feel free to reach out!</p>
+                    <a class="email" href="mailto:angiel.4work@gmail.com">Email Me ↗</a>
+                </div>
+
+                <div class="links">
+                    <h4>SOCIALS + MORE</h4>
+                    <a href="https://www.linkedin.com/in/angie-li-902082269/">
+                        <i class="fab fa-linkedin"></i> My LinkedIn
+                    </a>
+                    <a href="https://docs.google.com/document/d/1Wj7no1J77GqJvjqzcKh-HJBSZ5AbYYqCOfej4uKdKsk/edit?usp=sharing"
+                        target="_blank">
+                        <i class="fas fa-file-alt"></i> My Resume
+                    </a>
+                    <a href="https://github.com/al2231">
+                        <i class="fab fa-github"></i> My GitHub
+                    </a>
+                    <a href="projects.txt">
+                        <i class="fa-solid fa-calendar"></i> Project Archives
+                    </a>
+                </div>
+
+            </div>
+            <hr />
+            <div id="contact-bottom">
+
+                <div>
+                    <p id="time"></p>
+                    <p>© Angie Li <span id="copyright-year"></span></p>
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>

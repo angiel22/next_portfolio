@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+
+<!-- https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angie's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="functions.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+  <div class="aboutme">
+    <canvas id="starCanvas"></canvas>
+
+    <div class="navigation">
+      <a href="#works" class="nav-link">WORKS</a>
+      <a href="#about" class="nav-link">ABOUT</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+    </div>
+
+    <div class="opaque-bg animated fadeInDown">
+      <h1 style="color:#C0C7D3">ANGIE'S<span style="color:#1B52D7">/</span>PORTFOLIO</h1>
+      <div class="wall-page">
+        <div>
+          <!-- <p><span class="typing">Front-End Developer</span></p> -->
+          <p>
+            Currently a Web and Mobile Computing student <br />
+            <span>@</span> Rochester Institute of Technology
+          </p>
+        </div>
+      </div>
+      <!-- Wall Page -->
+    </div>
+  </div>
+
+  <!-- begin fullpage -->
+  <div id="fullpage">
+    <!-- begin section -->
+    <section id="works">
+      <a href="https://anotetoyou.cad.rit.edu" target="_blank" class="project-link">
+        <div class="project-container" style="padding: 10px;">
+          <img src="assets/anotetoyou-mockup.png" alt="A Note To You Mockup">
+          <div class="project-text">
+            <h2>
+              Fullstack Development // Leadership Project
+            </h2>
+            <h1>
+              A Note To You <span>↗</span>
+            </h1>
+            <p>
+              A Note To You is an online platform developed in partnership with a local arts organization featuring
+              anonymous notes written
+              by students in response to the guided prompt: "Write a note to your past or future self." Built using
+              JavaScript, Bootstrap, and PHP, the project blends thoughtful content with a responsive, user-friendly
+              design.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://devpost.com/software/forme-5h8m20" target="_blank" class="project-link">
+        <div class="project-container reverse">
+          <img src="assets/forME-mockup.png" alt="forME Application Mockup">
+          <div class="project-text">
+            <h2>
+              Fullstack Development // WiCHacks 2023 Hackathon <br />
+              M&T Best UI/UX Winning Project
+            </h2>
+            <h1>
+              forME <span>↗</span>
+            </h1>
+            <p>
+              Developed a mobile application within a 24-hour timeframe with a specific focus on educating women about
+              the latest mental health medications and birth control options available in the market.
+              Integrated an OpenFDA API.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://people.rit.edu/al2231/ISTE340/project2/" target="_blank" class="project-link">
+        <div class="project-container">
+          <img src="assets/ischool-mockup.png" alt="iSchool Site Mockup">
+          <div class="project-text">
+            <h2>
+              Fullstack Development // Academic Project
+            </h2>
+            <h1>
+              RIT iSchool Site <span>↗</span>
+            </h1>
+            <p>
+              Worked to enhance the user experience on the iSchool website by incorporating UI components,
+              be they downloaded React components or self-created ones.
+            </p>
+          </div>
+        </div>
+      </a>
+
+    </section>
+    <!-- end section -->
+  </div>
+  <!-- end fullpage-->
+
+  <section id="about">
+    <div id="about-content">
+
+      <img src="assets/me25.jpg" alt="picture of Angie">
+      <div id="about-text">
+        <h2>ABOUT ANGIE</h2>
+        <p>
+          With a user-centric mindset, bridging front-end and back-end design and development
+          to create intuitive and accessible experiences. <br /> <br />
+          Always open to learning new things and exploring different realms, striving to
+          grow as a designer and developer, and as an individual.
+        </p>
+        <div id="spotify">
+          <h3>CURRENT PLAYLIST</h3>
+          <iframe style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/6prBHh5ssYnz8MWP7QKZLl?utm_source=generator" width="75%"
+            height="175" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <div id="skill-content">
+      <div class="full-skillbar">
+        <h2>SKILLS</h2>
+        <div class="skillbar">
+          <div class="skillbar-title"> <!--style="background: #DD1E2F;"-->
+            <span> Web and Mobile Development with vanilla HTML, CSS, JS</span>
+          </div>
+          <div class="skillBarContainer">
+            <div class="skillBarValue value-90"></div>
+          </div>
+        </div> <!-- End Skill Bar -->
+
+        <div class="skillbar">
+          <div class="skillbar-title"> <!--style="background: #EBB035;"-->
+            <span>Creating Databases with MySQL and Connecting with Java</span>
+          </div>
+          <div class="skillBarContainer">
+            <div class="skillBarValue value-80"></div>
+          </div>
+        </div> <!-- End Skill Bar -->
+
+        <div class="skillbar">
+          <div class="skillbar-title"> <!--style="background: #218559;"-->
+            <span>php and Admin</span>
+          </div>
+          <div class="skillBarContainer">
+            <div class="skillBarValue value-70"></div>
+          </div>
+        </div> <!-- End Skill Bar -->
+
+        <div class="skillbar">
+          <div class="skillbar-title"> <!--style="background: #AB4DD2;"-->
+            <span>APIs and Consuming Data</span>
+          </div>
+          <div class="skillBarContainer">
+            <div class="skillBarValue value-50"></div>
+          </div>
+        </div> <!-- End Skill Bar -->
+
+        <div class="skillbar">
+          <div class="skillbar-title"> <!--style="background: #6840D4;"-->
+            <span>Using React.js and ASP.NET MVC</span>
+          </div>
+          <div class="skillBarContainer">
+            <div class="skillBarValue value-50"></div>
+          </div>
+        </div> <!-- End Skill Bar -->
+
+      </div> <!-- Full Skill Bar-->
+
+      <img src="assets/metoo25.jpg" alt="Second Image of Angie">
+    </div>
+
+
+  </section>
+  <!-- end about section -->
+
+  <!-- footer -->
+  <section id="contact">
+    <footer>
+      <div id="links-container">
+        <div class="email-card">
+          <h3>CONNECT WITH ME</h3>
+          <p>Feel free to reach out!</p>
+          <a class="email" href="mailto:angiel.4work@gmail.com">Email Me ↗</a>
+        </div>
+
+        <div class="links">
+          <h4>SOCIALS + MORE</h4>
+          <a href="https://www.linkedin.com/in/angie-li-902082269/">
+            <i class="fab fa-linkedin"></i> My LinkedIn
+          </a>
+          <a href="https://docs.google.com/document/d/1Wj7no1J77GqJvjqzcKh-HJBSZ5AbYYqCOfej4uKdKsk/edit?usp=sharing"
+            target="_blank">
+            <i class="fas fa-file-alt"></i> My Resume
+          </a>
+          <a href="https://github.com/al2231">
+            <i class="fab fa-github"></i> My GitHub
+          </a>
+          <a href="projects.txt">
+            <i class="fa-solid fa-calendar"></i> Project Archives
+          </a>
+        </div>
+
+      </div>
+      <hr />
+      <div id="contact-bottom">
+
+        <div>
+          <p id="time"></p>
+          <p>© Angie Li <span id="copyright-year"></span></p>
+        </div>
+      </div>
+    </footer>
+  </section>
+</body>
+
+</html>
