@@ -17,9 +17,11 @@ import Modal from 'react-modal';
 import { BsRewindCircle } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
 
+import { VERSIONS } from '../data';
+
 
 const TimeDisplay = dynamic(() => import("../../utils/getDate"), {
-  ssr: false, // hydration error fix
+    ssr: false, // hydration error fix
 });
 
 export default function FooterModal() {
@@ -33,11 +35,11 @@ export default function FooterModal() {
             md:flex-row md:justify-between md:items-center md:w-full px-4">
             <div className="md:w-1/2 opacity-70">
                 <p>Developed by Next.js + Tailwind CSS. Rapid designed in Figma. </p>
-                {/* <div className='flex'><TimeDisplay /> ©2025</div> */}
+                <div className='flex'><TimeDisplay /> ©2025</div>
             </div>
             <div id='modalEl'>
                 <div className="flex items-center justify-around group w-full md:w-fit
-                    bg-zinc-300/30 px-8 py-4 dark:bg-zinc-600/30 rounded-2xl cursor-pointer" 
+                    bg-zinc-300/30 px-8 py-4 dark:bg-zinc-600/30 rounded-2xl cursor-pointer"
                     onClick={openModal}>
 
                     <BsRewindCircle className="mr-2" size={24} />
@@ -65,91 +67,27 @@ export default function FooterModal() {
 
                     <div className="flex flex-col justify-center p-6">
                         <Timeline>
-                            <TimelineItem>
-                                <TimelineOppositeContent className="text-zinc-500 dark:text-zinc-400">
-                                    2023
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <TimelineDot />
-                                    <TimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    <a
-                                        href='/p_v1/index.html'
-                                        className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-800 transition"
-                                    >
-                                        React Portfolio 1.0
-                                    </a>
-                                </TimelineContent>
-                            </TimelineItem>
-                            <TimelineItem>
-                                <TimelineOppositeContent className="text-zinc-500 dark:text-zinc-400">
-                                    2024
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <TimelineDot />
-                                    <TimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    <a
-                                        href='/p_v2/index.html'
-                                        className="px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
-                                    >
-                                        Vanilla Portfolio 0.5
-                                    </a>
-                                </TimelineContent>
-                            </TimelineItem>
-                            <TimelineItem>
-                                <TimelineOppositeContent className="text-zinc-500 dark:text-zinc-400">
-                                    2024
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <TimelineDot />
-                                    <TimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    <a
-                                        href='/p_v3/index.html'
-                                        className="px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
-                                    >
-                                        Vanilla Portfolio 1.0 *
-                                    </a>
-                                </TimelineContent>
-                            </TimelineItem>
-                            <TimelineItem>
-                                <TimelineOppositeContent className="text-zinc-500 dark:text-zinc-400">
-                                    03.2025
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <TimelineDot />
-                                    <TimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    <a
-                                        href='/p_v4/index.html'
-                                        className="px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
-                                    >
-                                        Vanilla Portfolio 2.0 *
-                                    </a>
-                                </TimelineContent>
-                            </TimelineItem>
-                            <TimelineItem>
-                                <TimelineOppositeContent className="text-zinc-500 dark:text-zinc-400">
-                                    07.2025
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <TimelineDot />
-                                    <TimelineConnector />
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    <a
-                                        href='/p_v5/index.html'
-                                        className="px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
-                                    >
-                                        Vanilla Portfolio 2.5
-                                    </a>
-                                </TimelineContent>
-                            </TimelineItem>
+                            {VERSIONS.map((version) => (
+
+                                <TimelineItem className="flex w-full">
+                                    <TimelineOppositeContent className="text-zinc-500 dark:text-zinc-400">
+                                        {version.time}
+                                    </TimelineOppositeContent>
+                                    <TimelineSeparator>
+                                        <TimelineDot />
+                                        <TimelineConnector />
+                                    </TimelineSeparator>
+                                    <TimelineContent className="flex-1">
+                                        <a
+                                            href={version.link}
+                                            className="block w-full md:w-fit text-center
+                                        px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
+                                        >
+                                            {version.name}
+                                        </a>
+                                    </TimelineContent>
+                                </TimelineItem>
+                            ))}
                             <TimelineItem>
                                 <TimelineOppositeContent className="text-zinc-500 dark:text-zinc-400">
                                     Current

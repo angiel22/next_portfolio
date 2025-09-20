@@ -23,6 +23,14 @@ type Skill = {
     id: string
 }
 
+type Version = {
+    time: string
+    name: string
+    link: string
+    id: string
+}
+
+
 export const PROJECTS: Project[] = [
     {
         name: 'A Note To You',
@@ -106,5 +114,38 @@ export const SKILLS: Skill[] = [
         name: 'Mechatronics',
         description: 'machinery, laser/plasma cutters, 3D printers, and 3D modeling.',
         id: 'skill5'
+    },
+]
+
+export const VERSIONS: Version[] = [
+    {
+        time: '2023',
+        name: 'React Portfolio 1.0',
+        link: '/p_v1/index.html',
+        id: 'v1'
+    },
+    {
+        time: '2024',
+        name: 'Vanilla Portfolio 0.5',
+        link: '/p_v2/index.html',
+        id: 'v2'
+    },
+    {
+        time: '2024',
+        name: 'Vanilla Portfolio 1.0 *',
+        link: '/p_v3/index.html',
+        id: 'v3'
+    },
+    {
+        time: '03.2025',
+        name: 'Vanilla Portfolio 2.0 *',
+        link: '/p_v4/index.html',
+        id: 'v4'
+    },
+    {
+        time: '07.2025',
+        name: 'Vanilla Portfolio 2.5',
+        link: '/p_v5/index.html',
+        id: 'v5'
     },
 ]
