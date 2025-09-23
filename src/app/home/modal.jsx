@@ -34,7 +34,7 @@ export default function FooterModal() {
         <section className="flex flex-col gap-6 w-[80%] text-justify 
             md:flex-row md:justify-between md:items-center md:w-full px-4">
             <div className="md:w-1/2 opacity-70">
-                <p>Developed by Next.js + Tailwind CSS. Rapid designed in Figma. </p>
+                <p>Developed by me(Angie) using Next.js + Tailwind CSS. Rapid designed in Figma. </p>
                 <div className='flex'><TimeDisplay /> ©2025</div>
             </div>
             <div id='modalEl'>
