@@ -8,7 +8,8 @@ export default function SidePanel({ activeMenuItem, onMenuItemClick }) {
 
     return (
         <div className="relative md:h-screen box-border">
-            <div className="fixed left-6 w-64 lg:w-72 flex flex-col justify-between rounded-md bg-zinc-300/30 dark:bg-zinc-600/30 h-[90%] my-8 p-8">
+            {/* bg-zinc-300/30 */}
+            <div className="fixed left-6 w-64 lg:w-72 flex flex-col justify-between rounded-md bg-zinc-600/30 h-[90%] my-8 p-8">
                 <div>
                     <img src="/images/me.jpg" alt="image of Angie" className="object-cover w-full h-1/3 rounded-xl" />
                     <hr className="my-4" />

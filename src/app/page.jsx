@@ -132,8 +132,9 @@ export function Projects({ visible }) {
       <div className="flex flex-col gap-6 mb-4">
         {PROJECTS.map((project) => (
           <a
+          // bg-zinc-300/30
             className="relative overflow-hidden flex flex-col md:flex-row gap-4 rounded-2xl 
-             bg-zinc-300/30 p-8 dark:bg-zinc-600/30 
+              p-8 bg-zinc-600/30
              ring-1 ring-transparent transition-all duration-300
              hover:ring-2 hover:ring-blue-500 hover:ring-inset hover:shadow-[inset_0_0_10px_rgba(59,130,246,0.8)]"
             href={project.link}
@@ -141,24 +142,28 @@ export function Projects({ visible }) {
             rel="noopener noreferrer"
             key={project.name}
           >
-            <div className="relative basis-1/2 flex-shrink-0 rounded-2xl bg-zinc-50/40 p-1 
-                  ring-1 ring-zinc-200/50 ring-inset 
-                  dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+            {/* bg-zinc-50/40 ring-zinc-200/50*/}
+            <div className="relative basis-1/2 flex-shrink-0 rounded-2xl p-1 
+                  ring-1  ring-inset bg-zinc-950/40 ring-zinc-800/50">
               <img src={project.image} alt={project.name} className="object-cover w-full h-full rounded-xl" />
             </div>
             <div className="px-1 flex flex-col md:basis-1/2 justify-center gap-4 mt-4 md:mt-0">
-              <div className="font-base relative inline-block font-[450] text-zinc-900 dark:text-zinc-50">
+            {/* text-zinc-900 */}
+              <div className="font-base relative inline-block font-[450] text-zinc-50">
                 {project.name}
-                <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50"></span>
+                {/* bg-zinc-900 */}
+                <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-50"></span>
               </div>
-              <p className="text-base text-zinc-600 dark:text-zinc-400">
+              {/* text-zinc-600 */}
+              <p className="text-base text-zinc-400">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2 mt-2">
                 {project.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="rounded-full bg-zinc-200/70 dark:bg-zinc-800/70 px-3 py-1 text-sm text-zinc-700 dark:text-zinc-300"
+                    // bg-zinc-200/70 text-zinc-700
+                    className="rounded-full bg-zinc-800/70 px-3 py-1 text-sm text-zinc-300"
                   >
                     {tool}
                   </span>
@@ -168,8 +173,9 @@ export function Projects({ visible }) {
           </a>
         ))}
       </div>
+      {/* bg-zinc-300/30 */}
       <p className="flex items-center group w-fit
-       bg-zinc-300/30 px-8 py-4 dark:bg-zinc-600/30 rounded-2xl ">
+        px-8 py-4 bg-zinc-600/30 rounded-2xl ">
         <a href="./projects">
           View Project Archives
         </a>
@@ -191,23 +197,26 @@ export function WorkExperiences() {
         {WORK_EXPERIENCES.map((job) => (
 
           <div key={job.id} className="space-y-2">
-            <div className="relative h-full w-full rounded-[15px] p-4 dark:bg-zinc-950">
+            <div className="relative h-full w-full rounded-[15px] p-4 bg-zinc-950">
               <div className="relative flex w-full flex-col md:flex-row justify-between">
-                <p className="w-1/3 text-zinc-600 dark:text-zinc-400">
+                {/* text-zinc-600 */}
+                <p className="w-1/3 text-zinc-400">
                   {job.start} - {job.end}
                 </p>
                 <div className="md:w-2/3">
-                  <h4 className="font-normal dark:text-zinc-100">
+                  <h4 className="font-normal text-zinc-100">
                     {job.title} * {job.company}
                   </h4>
-                  <p className="text-sm/7 md:pr-8 text-justify text-zinc-500 dark:text-zinc-400">
+                  {/* text-zinc-500 */}
+                  <p className="text-sm/7 md:pr-8 text-justify text-zinc-400">
                     {job.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {job.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="rounded-full bg-zinc-200/70 dark:bg-zinc-800/70 px-3 py-1 text-sm text-zinc-700 dark:text-zinc-300"
+                        // bg-zinc-200/70 text-zinc-700
+                        className="rounded-full bg-zinc-800/70 px-3 py-1 text-sm text-zinc-300"
                       >
                         {tool}
                       </span>
@@ -219,8 +228,9 @@ export function WorkExperiences() {
           </div>
         ))}
       </div>
+      {/* bg-zinc-300/30 */}
       <p className="flex items-center group w-fit
-       bg-zinc-300/30 px-8 py-4 dark:bg-zinc-600/30 rounded-2xl ">
+        px-8 py-4 bg-zinc-600/30 rounded-2xl ">
         <a href="./resume">
           View Full Resume
         </a>

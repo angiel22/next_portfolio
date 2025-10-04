@@ -24,8 +24,9 @@ export default function MobileMenu({ activeMenuItem, handleMenuItemClick }) {
                 {/* Hamburger button */}
                 <button
                     onClick={() => setOpen(!open)}
-                    className="text-3xl p-4 rounded-full bg-zinc-300/50 dark:bg-zinc-600/50 shadow-lg 
-                    hover:bg-zinc-400/90 dark:hover:bg-zinc-700/90 transition"
+                    // bg-zinc-300/50 hover:bg-zinc-400/90
+                    className="text-3xl p-4 rounded-full bg-zinc-600/50 shadow-lg 
+                    hover:bg-zinc-700/90 transition"
                 >
                     <PiHamburgerBold />
                 </button>
@@ -33,16 +34,18 @@ export default function MobileMenu({ activeMenuItem, handleMenuItemClick }) {
                 {/* Dropdown menu */}
                 {open && (
                     <nav
+                    // bg-zinc-300/90
                         className={`
                         absolute w-48 flex flex-col gap-1 p-2 rounded-lg
-                        bg-zinc-300/90 dark:bg-zinc-600/90 shadow-lg z-50
+                        bg-zinc-600/90 shadow-lg z-50
                         ${sticky ? "bottom-full mb-2 right-0" : "top-full mt-2 right-0"}
                         `}
                     >
                         {["Projects", "Work Experiences", "About"].map((item) => (
                             <button
                                 key={item}
-                                className={`text-left px-3 py-2 rounded hover:bg-blue-200 dark:hover:bg-blue-600`}
+                                // hover:bg-blue-200
+                                className={`text-left px-3 py-2 rounded hover:bg-blue-600`}
                                 onClick={() => {
                                     handleMenuItemClick(item);
                                     setOpen(false);

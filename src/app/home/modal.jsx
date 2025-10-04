@@ -38,8 +38,9 @@ export default function FooterModal() {
                 <div className='flex'><TimeDisplay /> ©2025</div>
             </div>
             <div id='modalEl'>
+                {/* bg-zinc-300/30 */}
                 <div className="flex items-center justify-around group w-full md:w-fit
-                    bg-zinc-300/30 px-8 py-4 dark:bg-zinc-600/30 rounded-2xl cursor-pointer"
+                     px-8 py-4 bg-zinc-600/30 rounded-2xl cursor-pointer"
                     onClick={openModal}>
 
                     <BsRewindCircle className="mr-2" size={24} />
@@ -50,15 +51,19 @@ export default function FooterModal() {
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
                     contentLabel="Rewind Modal"
-                    className='bg-zinc-300 dark:bg-zinc-900 m-8 h-[90%] rounded-2xl shadow-lg'
+                    className='bg-zinc-900 m-8 h-[90%] rounded-2xl shadow-lg'
+                    // bg-zinc-300
                 >
-                    <div className="flex justify-between items-center p-4 border-b border-zinc-300 dark:border-zinc-700">
-                        <h2 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">
+                     {/* border-zinc-300  */}
+                    <div className="flex justify-between items-center p-4 border-b border-zinc-700">
+                        {/* text-zinc-800 */}
+                        <h2 className="text-lg font-semibold text-zinc-100"> 
                             Portfolio Evolution
                         </h2>
                         <button
                             onClick={closeModal}
-                            className="flex items-center gap-1 text-zinc-600 dark:text-zinc-300 hover:text-red-500"
+                            // text-zinc-600
+                            className="flex items-center gap-1 text-zinc-300 hover:text-red-500"
                         >
                             <IoIosClose size={28} />
                             Close
@@ -70,7 +75,8 @@ export default function FooterModal() {
                             {VERSIONS.map((version) => (
 
                                 <TimelineItem className="flex w-full">
-                                    <TimelineOppositeContent className="text-zinc-500 dark:text-zinc-400">
+                                    {/* text-zinc-500 */}
+                                    <TimelineOppositeContent className="text-zinc-400">
                                         {version.time}
                                     </TimelineOppositeContent>
                                     <TimelineSeparator>
@@ -89,7 +95,8 @@ export default function FooterModal() {
                                 </TimelineItem>
                             ))}
                             <TimelineItem>
-                                <TimelineOppositeContent className="text-zinc-500 dark:text-zinc-400">
+                                {/* text-zinc-500 */}
+                                <TimelineOppositeContent className="text-zinc-400">
                                     Current
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>

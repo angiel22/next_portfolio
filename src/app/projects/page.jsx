@@ -11,7 +11,8 @@ export default function ProjectsTable() {
             </div>
             <table className="table-auto border-collapse border border-gray-400 w-full text-left">
                 <thead>
-                    <tr className="bg-zinc-300 dark:bg-gray-700">
+                    {/* bg-zinc-300 */}
+                    <tr className="bg-gray-700">
                         <th className="border border-gray-400 px-4 py-2">Year</th>
                         <th className="border border-gray-400 px-4 py-2">Project</th>
                         <th className="border border-gray-400 px-4 py-2">Context</th>
