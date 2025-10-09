@@ -27,15 +27,25 @@ export default function ProjectsTable() {
                         </td>
                     </tr>
                     <tr>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2"></td>
-                        <td className="border px-4 py-2"></td>
+                        <td className="border px-4 py-2">2025</td>
+                        <td className="border px-4 py-2">BirdBox Monitor</td>
+                        <td className="border px-4 py-2">Senior Capstone</td>
+                        <td className="border px-4 py-2">Full project process from requirements gathering to hardware and software integration for sponsor.</td>
+                    </tr>
+                    <tr>
+                        <td className="border px-4 py-2">2025</td>
+                        <td className="border px-4 py-2">
+                            <a href="https://www.figma.com/design/VokTLGHSGJlxVVPd6M9UbV/Shark-Buddy--Make-a-thon?node-id=2001-2&t=jKpvBlEVTMZRaiX3-1" className="text-blue-600 hover:underline">
+                                Shark Buddy
+                            </a>
+                        </td>
+                        <td className="border px-4 py-2">Personal - New Media</td>
+                        <td className="border px-4 py-2">Use of new Figma Make feature to create an AR app for the playground.</td>
                     </tr>
 
                     {/* Past */}
                     <tr>
-                        <td colSpan="4" className="text-center font-bold py-2">
+                        <td colSpan="4" className="text-center font-bold bg-gray-600 py-2">
                             Past
                         </td>
                     </tr>
@@ -43,7 +53,7 @@ export default function ProjectsTable() {
                         <td className="border px-4 py-2">2025</td>
                         <td className="border px-4 py-2">GreenSphere</td>
                         <td className="border px-4 py-2">ISTE 454/456</td>
-                        <td className="border px-4 py-2">IOS/Android Sustainability App</td>
+                        <td className="border px-4 py-2">IOS/Android Sustainability App with Swift and Kotlin.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">* 2025</td>
@@ -53,7 +63,7 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">Art Leadership</td>
-                        <td className="border px-4 py-2">Info</td>
+                        <td className="border px-4 py-2">Platform for community arts using Bootstrap, JS, etc.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2024 (Academic)</td>
@@ -63,7 +73,7 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">ISTE 252</td>
-                        <td className="border px-4 py-2">Utilized: Swift, Figma <br/> Mobile app development</td>
+                        <td className="border px-4 py-2">Mobile app development with Flutter/Figma, birdwatching social app.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2024 (Academic)</td>
@@ -73,19 +83,19 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">ISTE 260</td>
-                        <td className="border px-4 py-2">Design process walkthrough. Prototyped with Figma</td>
+                        <td className="border px-4 py-2">Design process walkthrough. Prototyped with Figma.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2023</td>
                         <td className="border px-4 py-2">WOREO</td>
                         <td className="border px-4 py-2">Personal [Discontinued]</td>
-                        <td className="border px-4 py-2">Info</td>
+                        <td className="border px-4 py-2">Platforming game built in Unity, using Bitbucket.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2023</td>
                         <td className="border px-4 py-2">BHASE</td>
                         <td className="border px-4 py-2">UX Club [Discontinued]</td>
-                        <td className="border px-4 py-2">Info</td>
+                        <td className="border px-4 py-2">Budgeting webapp catered to college students, focused on UX design process, such as user interviews, etc.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">* 2023 (Academic)</td>
@@ -95,7 +105,7 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">ISTE 340</td>
-                        <td className="border px-4 py-2">Utilized: React</td>
+                        <td className="border px-4 py-2">Built with React, redesigning frontend with data from api, prioritizing components.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2023 (Academic)</td>
@@ -105,7 +115,7 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">ISTE 340</td>
-                        <td className="border px-4 py-2">Utilized: JS, HTML, CSS <br /> Dynamic page population with created data</td>
+                        <td className="border px-4 py-2">Dynamic page population with created data using JS, HTML, CSS.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">* 2023</td>

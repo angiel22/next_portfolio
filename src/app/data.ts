@@ -118,12 +118,12 @@ export const SKILLS: Skill[] = [
 ]
 
 export const VERSIONS: Version[] = [
-    {
-        time: '2023',
-        name: 'React Portfolio 1.0',
-        link: '/p_v1/index.html',
-        id: 'v1'
-    },
+    // {
+    //     time: '2023',
+    //     name: 'React Portfolio 1.0',
+    //     link: '/p_v1/index.html',
+    //     id: 'v1'
+    // },
     {
         time: '2024',
         name: 'Vanilla Portfolio 0.5',

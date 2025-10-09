@@ -97,7 +97,7 @@ export default function Home() {
               <h1 className="text-5xl font-extrabold mb-2">Angie Li</h1>
               <h2 className="text-xl">Front-End Developer</h2>
             </div>
-            <MobileMenu activeMenuItem={activeMenuItem} handleMenuItemClick={handleMenuItemClick}/>
+            <MobileMenu activeMenuItem={activeMenuItem} handleMenuItemClick={handleMenuItemClick} />
           </div>
         </div>
 
@@ -132,7 +132,7 @@ export function Projects({ visible }) {
       <div className="flex flex-col gap-6 mb-4">
         {PROJECTS.map((project) => (
           <a
-          // bg-zinc-300/30
+            // bg-zinc-300/30
             className="relative overflow-hidden flex flex-col md:flex-row gap-4 rounded-2xl 
               p-8 bg-zinc-600/30
              ring-1 ring-transparent transition-all duration-300
@@ -148,7 +148,7 @@ export function Projects({ visible }) {
               <img src={project.image} alt={project.name} className="object-cover w-full h-full rounded-xl" />
             </div>
             <div className="px-1 flex flex-col md:basis-1/2 justify-center gap-4 mt-4 md:mt-0">
-            {/* text-zinc-900 */}
+              {/* text-zinc-900 */}
               <div className="font-base relative inline-block font-[450] text-zinc-50">
                 {project.name}
                 {/* bg-zinc-900 */}
@@ -229,16 +229,21 @@ export function WorkExperiences() {
         ))}
       </div>
       {/* bg-zinc-300/30 */}
-      <p className="flex items-center group w-fit
+      <div>
+        <p className="flex items-center group w-fit
         px-8 py-4 bg-zinc-600/30 rounded-2xl ">
-        <a href="./resume">
-          View Full Resume
-        </a>
-        <FaArrowRight
-          className="ml-2 transition-transform duration-300 group-hover:translate-x-3"
-          size={24}
-        />
-      </p>
+          <a href="./resume">
+            View Full Resume
+          </a>
+          <FaArrowRight
+            className="ml-2 transition-transform duration-300 group-hover:translate-x-3"
+            size={24}
+          />
+        </p>
+        {/* <p>
+          **Check out my LinkedIn for fuller experience
+        </p> */}
+      </div>
     </div>
   )
 }

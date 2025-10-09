@@ -52,12 +52,12 @@ export default function FooterModal() {
                     onRequestClose={closeModal}
                     contentLabel="Rewind Modal"
                     className='bg-zinc-900 m-8 h-[90%] rounded-2xl shadow-lg'
-                    // bg-zinc-300
+                // bg-zinc-300
                 >
-                     {/* border-zinc-300  */}
+                    {/* border-zinc-300  */}
                     <div className="flex justify-between items-center p-4 border-b border-zinc-700">
                         {/* text-zinc-800 */}
-                        <h2 className="text-lg font-semibold text-zinc-100"> 
+                        <h2 className="text-lg font-semibold text-zinc-100">
                             Portfolio Evolution
                         </h2>
                         <button
@@ -71,6 +71,23 @@ export default function FooterModal() {
                     </div>
 
                     <div className="flex flex-col justify-center p-6">
+                        <TimelineItem>
+                            {/* text-zinc-500 */}
+                            <TimelineOppositeContent className="text-zinc-400">
+                                2023
+                            </TimelineOppositeContent>
+                            <TimelineSeparator>
+                                <TimelineDot />
+                                <TimelineConnector />
+                            </TimelineSeparator>
+                            <TimelineContent>
+                                <button
+                                    className="px-4 py-2 rounded-lg bg-gray-500 text-white"
+                                >
+                                    React Portfolio 1.0
+                                </button>
+                            </TimelineContent>
+                        </TimelineItem>
                         <Timeline>
                             {VERSIONS.map((version) => (
 
