@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { FaArrowRight } from "react-icons/fa";
 import { PROJECTS } from '../../data'
 import CarouselClient from './CarouselClient'
 import type { Project } from '../../data'

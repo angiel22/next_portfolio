@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import * as React from 'react';
 import Modal from 'react-modal';
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { FaArrowRight } from "react-icons/fa";
 import { CgPlayButtonR } from "react-icons/cg";
@@ -46,41 +46,6 @@ export default function Home() {
       targetSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  // useEffect(() => {
-  //   // guard for SSR (Next.js)
-  //   if (typeof window === "undefined") return;
-
-  //   // respect reduced motion preference
-  //   const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-  //   if (prefersReduced) {
-  //     setIsLoaded(true);
-  //     sessionStorage.setItem(HOME_INTRO_KEY, "true");
-  //     return;
-  //   }
-
-  //   const alreadyPlayed = sessionStorage.getItem(HOME_INTRO_KEY) === "true";
-  //   if (alreadyPlayed) {
-  //     setIsLoaded(true);
-  //     return;
-  //   }
-
-  //   // only start one timer
-  //   if (!timerRef.current) {
-  //     timerRef.current = setTimeout(() => {
-  //       setIsLoaded(true);
-  //       sessionStorage.setItem(HOME_INTRO_KEY, "true");
-  //       timerRef.current = null;
-  //     }, 1500);
-  //   }
-
-  //   return () => {
-  //     if (timerRef.current) {
-  //       clearTimeout(timerRef.current);
-  //       timerRef.current = null;
-  //     }
-  //   };
-  // }, []);
 
   useEffect(() => {
     // no active menu on mobile screens
@@ -154,12 +119,12 @@ export default function Home() {
         )}
       </AnimatePresence> */}
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 20 }}
         // animate={dark ? { opacity: 1, y: 0 } : {}}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-      >
+      > */}
         <div className="grid grid-cols-1 md:grid-cols-4 mx-6 md:gap-6">
           {/* Desktop */}
           <div className="hidden md:block col-span-1">
@@ -210,7 +175,7 @@ export default function Home() {
           </div>
         </div>
 
-      </motion.div>
+      {/* </motion.div> */}
     </>
   );
 }
