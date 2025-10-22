@@ -3,11 +3,13 @@
 import { useState, useEffect, useRef } from "react";
 import * as React from 'react';
 import Modal from 'react-modal';
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 import { FaArrowRight } from "react-icons/fa";
 import { CgPlayButtonR } from "react-icons/cg";
 import { SiHyperskill } from "react-icons/si";
 import { FaGithub, FaLinkedin, FaPaperclip } from 'react-icons/fa';
+import { FaRegLightbulb, FaLightbulb } from "react-icons/fa";
 
 import SidePanel from '../components/sidePanel';
 import MobileMenu from '../components/hamburger';
@@ -20,6 +22,11 @@ import {
 } from './data'
 
 export default function Home() {
+  // const [isLoaded, setIsLoaded] = useState(false);
+  // const [dark, setDark] = useState(false);
+  // const timerRef = useRef(null);
+  // const HOME_INTRO_KEY = "homeIntroPlayed_session_v1";
+
   const [showHeader, setShowHeader] = useState(false);
   const [activeMenuItem, setActiveMenuItem] = useState("Projects");
 
@@ -39,6 +46,41 @@ export default function Home() {
       targetSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // useEffect(() => {
+  //   // guard for SSR (Next.js)
+  //   if (typeof window === "undefined") return;
+
+  //   // respect reduced motion preference
+  //   const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  //   if (prefersReduced) {
+  //     setIsLoaded(true);
+  //     sessionStorage.setItem(HOME_INTRO_KEY, "true");
+  //     return;
+  //   }
+
+  //   const alreadyPlayed = sessionStorage.getItem(HOME_INTRO_KEY) === "true";
+  //   if (alreadyPlayed) {
+  //     setIsLoaded(true);
+  //     return;
+  //   }
+
+  //   // only start one timer
+  //   if (!timerRef.current) {
+  //     timerRef.current = setTimeout(() => {
+  //       setIsLoaded(true);
+  //       sessionStorage.setItem(HOME_INTRO_KEY, "true");
+  //       timerRef.current = null;
+  //     }, 1500);
+  //   }
+
+  //   return () => {
+  //     if (timerRef.current) {
+  //       clearTimeout(timerRef.current);
+  //       timerRef.current = null;
+  //     }
+  //   };
+  // }, []);
 
   useEffect(() => {
     // no active menu on mobile screens
@@ -73,55 +115,103 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 mx-6 md:gap-6">
-      {/* Desktop */}
-      <div className="hidden md:block col-span-1">
-        <SidePanel
-          activeMenuItem={activeMenuItem}
-          onMenuItemClick={handleMenuItemClick}
-        />
-      </div>
+    <>
+      {/* <AnimatePresence>
+        {!isLoaded && (
+          <motion.div
+            key="loader"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+            className="fixed inset-0 flex items-center justify-center z-50"
+          >
+            <button onClick={setDark}>
+              <AnimatePresence mode="wait" initial={false}>
+                {dark ? (
+                  <motion.div
+                    key="dark"
+                    initial={{ opacity: 0, rotate: -90 }}
+                    animate={{ opacity: 1, rotate: 0 }}
+                    exit={{ opacity: 0, rotate: 90 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <FaLightbulb size={28} />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="light"
+                    initial={{ opacity: 0, rotate: 90 }}
+                    animate={{ opacity: 1, rotate: 0 }}
+                    exit={{ opacity: 0, rotate: -90 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <FaRegLightbulb size={28} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence> */}
 
-      <div className="block md:hidden mb-6 mt-12">
-        <div className="flex flex-col">
-          <div className="w-full h-[15vh]">
-            <img
-              src="/images/me.jpg"
-              alt="image of Angie"
-              className="w-full h-full object-cover rounded-xl"
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        // animate={dark ? { opacity: 1, y: 0 } : {}}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-4 mx-6 md:gap-6">
+          {/* Desktop */}
+          <div className="hidden md:block col-span-1">
+            <SidePanel
+              activeMenuItem={activeMenuItem}
+              onMenuItemClick={handleMenuItemClick}
             />
           </div>
-          <hr className="my-4" />
-          <div className="flex items-start justify-between">
-            <div>
-              <h1 className="text-5xl font-extrabold mb-2">Angie Li</h1>
-              <h2 className="text-xl">Front-End Developer</h2>
+
+          <div className="block md:hidden mb-6 mt-12">
+            <div className="flex flex-col">
+              <div className="w-full h-[15vh]">
+                <img
+                  src="/images/me.jpg"
+                  alt="image of Angie"
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
+              <hr className="my-4" />
+              <div className="flex items-start justify-between">
+                <div>
+                  <h1 className="text-5xl font-extrabold mb-2">Angie Li</h1>
+                  <h2 className="text-xl">Front-End Developer</h2>
+                </div>
+                <MobileMenu activeMenuItem={activeMenuItem} handleMenuItemClick={handleMenuItemClick} />
+              </div>
             </div>
-            <MobileMenu activeMenuItem={activeMenuItem} handleMenuItemClick={handleMenuItemClick} />
+
+            <section className="mt-4">
+              <div className='flex gap-8'>
+                <a href='https://github.com/al2231' target="_blank" rel="noopener noreferrer"><FaGithub size={16} /></a>
+                <a href='https://www.linkedin.com/in/angie-3200-li/' target="_blank" rel="noopener noreferrer"><FaLinkedin size={16} /></a>
+                <a href="/Li_Resume.pdf" download><FaPaperclip size={16} /></a>
+              </div>
+            </section>
+          </div>
+          <div className="col-span-3 flex flex-col my-8 gap-36 md:pl-12">
+            <section id="projects" ref={projectsRef} data-menu="Projects">
+              <Projects visible={showHeader} />
+            </section>
+            <section id="work-experiences" ref={workRef} data-menu="Work Experiences">
+              <WorkExperiences />
+            </section>
+            <section id="about" ref={aboutRef} data-menu="About">
+              <About />
+            </section>
+            <FooterModal />
           </div>
         </div>
 
-        <section className="mt-4">
-          <div className='flex gap-8'>
-            <a href='https://github.com/al2231' target="_blank" rel="noopener noreferrer"><FaGithub size={16} /></a>
-            <a href='https://www.linkedin.com/in/angie-3200-li/' target="_blank" rel="noopener noreferrer"><FaLinkedin size={16} /></a>
-            <a href="/Li_Resume.pdf" download><FaPaperclip size={16} /></a>
-          </div>
-        </section>
-      </div>
-      <div className="col-span-3 flex flex-col my-8 gap-36 md:pl-12">
-        <section id="projects" ref={projectsRef} data-menu="Projects">
-          <Projects visible={showHeader} />
-        </section>
-        <section id="work-experiences" ref={workRef} data-menu="Work Experiences">
-          <WorkExperiences />
-        </section>
-        <section id="about" ref={aboutRef} data-menu="About">
-          <About />
-        </section>
-        <FooterModal />
-      </div>
-    </div>
+      </motion.div>
+    </>
   );
 }
 
@@ -137,8 +227,7 @@ export function Projects({ visible }) {
               p-8 bg-zinc-600/30
              ring-1 ring-transparent transition-all duration-300
              hover:ring-2 hover:ring-blue-500 hover:ring-inset hover:shadow-[inset_0_0_10px_rgba(59,130,246,0.8)]"
-            href={project.link}
-            target="_blank"
+            href={`/projects/${project.slug}`}
             rel="noopener noreferrer"
             key={project.name}
           >

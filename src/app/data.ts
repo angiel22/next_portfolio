@@ -1,11 +1,24 @@
-type Project = {
+export type Project = {
+    id: string
     name: string
     description: string
     link: string
     image: string
-    id: string
     tools: string[]
+
+    // new / required-for-page fields
+    slug: string            // URL slug (e.g. 'birdbox-cellular-dashboard')
+    date?: string            // human-readable date (e.g. 'June 2025' or '2025-06-12')
+    teamSize?: number
+    hero?: string
+    overview?: string
+    features?: string[]
+    samples?: string[]       // sample photos for carousel (array of image paths)
+    challenges?: string
+    outcome?: string
+    related?: string[]     // array of related project IDs (for clickable links)
 }
+
 
 type WorkExperience = {
     company: string
@@ -32,31 +45,94 @@ type Version = {
 
 
 export const PROJECTS: Project[] = [
-    {
-        name: 'A Note To You',
-        description:
-            'An online platform developed in partnership with a local arts organization featuring anonymous notes written by students. The project blends thoughtful content with community outreach.',
-        link: 'https://anotetoyou.cad.rit.edu/',
-        image: '/images/anotetoyou-mockup.png',
-        id: 'project1',
-        tools: ['JavaScript', 'Bootstrap', 'PHP'],
-    },
-    {
-        name: 'forME',
-        description: 'M&T Best UI/UX Winning Project: Developed a mobile application within a 24-hour timeframe with a specific focus on educating women about the latest mental health medications and birth control options available in the market.',
-        link: 'https://devpost.com/software/forme-5h8m20',
-        image: '/images/forme-mockup.png',
-        id: 'project2',
-        tools: ['HTML', 'CSS', 'JavaScript', 'Web API'],
-    },
-    {
-        name: 'RIT iSchool Site',
-        description: 'Worked to enhance the user experience on the iSchool website by incorporating UI components, be they downloaded React components or self-created ones.',
-        link: 'https://people.rit.edu/al2231/ISTE340/project2/',
-        image: '/images/ischool-mockup.png',
-        id: 'project3',
-        tools: ['React', 'Web API', 'CSS'],
-    },
+  {
+    id: 'project1',
+    slug: 'a-note-to-you',
+    name: 'A Note To You',
+    description:
+      'An online platform developed in partnership with a local arts organization featuring anonymous notes written by students. The project blends thoughtful content with community outreach.',
+    link: 'https://anotetoyou.cad.rit.edu/',
+    image: '/images/anotetoyou-mockup.png',
+    hero: '/images/anotetoyou-mockup.png',
+    tools: ['JavaScript', 'Bootstrap', 'PHP'],
+    date: 'Spring 2024',
+    teamSize: 8,
+    overview:
+      'The project was designed to give students a safe, creative outlet to share their emotions and experiences through anonymous notes. Our team collaborated with a local arts organization to ensure accessibility and inclusivity, while also focusing on a simple, responsive UI for both desktop and mobile.',
+    features: [
+      'Infinite schrolling',
+      'Moderated content review pipeline',
+      'Responsive and accessible design',
+    ],
+    // samples: [
+    //   '/images/anotetoyou-1.png',
+    //   '/images/anotetoyou-2.png',
+    //   '/images/anotetoyou-3.png',
+    // ],
+    challenges:
+      'Balancing anonymity and moderation was a key challenge.',
+    outcome:
+      'The site successfully launched with hundreds of student submissions and was praised by the partnering organization for its thoughtful design and emotional impact.',
+    related: ['project2'],
+  },
+  {
+    id: 'project2',
+    slug: 'forme',
+    name: 'forME',
+    description:
+      'M&T Best UI/UX Winning Project: Developed a mobile application within a 24-hour timeframe with a specific focus on educating women about the latest mental health medications and birth control options available in the market.',
+    link: 'https://devpost.com/software/forme-5h8m20',
+    image: '/images/forme-mockup.png',
+    hero: '/images/forme-mockup.png',
+    tools: ['HTML', 'CSS', 'JavaScript', 'Web API'],
+    date: 'Fall 2023',
+    teamSize: 4,
+    overview:
+      'forME is a hackathon project created in under 24 hours to provide an accessible platform for women seeking reliable health information. The app integrates mental health and reproductive health APIs, with a focus on simplicity and credibility.',
+    features: [
+      'Searchable database of medications and birth control options',
+      'Personalized content recommendations',
+      'Clean, calming interface with color psychology considerations',
+    ],
+    samples: [
+      '/images/forme-mockup.png',
+      '/images/forme-1.png',
+    ],
+    challenges:
+      'Time constraints and information accuracy were major challenges. We worked rapidly to design a user-centered flow while ensuring data sources were medically verified.',
+    outcome:
+      'The project won the M&T “Best UI/UX” award for its intuitive design and educational impact. The experience highlighted the importance of designing for accessibility and trust.',
+    related: ['project1', 'project3'],
+  },
+  {
+    id: 'project3',
+    slug: 'rit-ischool-site',
+    name: 'RIT iSchool Site',
+    description:
+      'Worked to enhance the user experience on the iSchool website by incorporating UI components, be they downloaded React components or self-created ones.',
+    link: 'https://people.rit.edu/al2231/ISTE340/project2/',
+    image: '/images/ischool-mockup.png',
+    hero: '/images/ischool-mockup.png',
+    tools: ['React', 'Web API', 'CSS'],
+    date: 'Spring 2024',
+    teamSize: 1,
+    overview:
+      'This project focused on improving the usability and visual design of the RIT iSchool website. The work involved modernizing the interface and implementing reusable React components to streamline future development.',
+    features: [
+      'Modular React component design',
+      'Improved navigation and accessibility',
+      'Custom styling consistent with RIT branding',
+    ],
+    samples: [
+      '/images/ischool-1.png',
+      '/images/ischool-2.png',
+    ],
+    challenges:
+      'Ensuring design consistency with RIT brand guidelines while introducing new components required careful iteration and collaboration with faculty.',
+    outcome:
+      'The new interface received positive feedback from students and staff, and several components were integrated into the live iSchool environment.',
+    related: ['project2'],
+  },
 ]
 
 export const WORK_EXPERIENCES: WorkExperience[] = [
