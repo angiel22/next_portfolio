@@ -3,15 +3,14 @@
 import { useState, useEffect, useRef } from "react";
 import * as React from 'react';
 import Modal from 'react-modal';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { FaArrowRight } from "react-icons/fa";
 import { CgPlayButtonR } from "react-icons/cg";
 import { SiHyperskill } from "react-icons/si";
 import { FaGithub, FaLinkedin, FaPaperclip } from 'react-icons/fa';
-import { FaRegLightbulb, FaLightbulb } from "react-icons/fa";
 
-import SidePanel from '../components/sidePanel';
+import SidePanel from '../components/SidePanel';
 import MobileMenu from '../components/hamburger';
 import FooterModal from './home/modal.jsx';
 
@@ -22,10 +21,6 @@ import {
 } from './data'
 
 export default function Home() {
-  // const [isLoaded, setIsLoaded] = useState(false);
-  // const [dark, setDark] = useState(false);
-  // const timerRef = useRef(null);
-  // const HOME_INTRO_KEY = "homeIntroPlayed_session_v1";
 
   const [showHeader, setShowHeader] = useState(false);
   const [activeMenuItem, setActiveMenuItem] = useState("Projects");
@@ -81,101 +76,55 @@ export default function Home() {
 
   return (
     <>
-      {/* <AnimatePresence>
-        {!isLoaded && (
-          <motion.div
-            key="loader"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
-            className="fixed inset-0 flex items-center justify-center z-50"
-          >
-            <button onClick={setDark}>
-              <AnimatePresence mode="wait" initial={false}>
-                {dark ? (
-                  <motion.div
-                    key="dark"
-                    initial={{ opacity: 0, rotate: -90 }}
-                    animate={{ opacity: 1, rotate: 0 }}
-                    exit={{ opacity: 0, rotate: 90 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <FaLightbulb size={28} />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="light"
-                    initial={{ opacity: 0, rotate: 90 }}
-                    animate={{ opacity: 1, rotate: 0 }}
-                    exit={{ opacity: 0, rotate: -90 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <FaRegLightbulb size={28} />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence> */}
-
-      {/* <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        // animate={dark ? { opacity: 1, y: 0 } : {}}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      > */}
-        <div className="grid grid-cols-1 md:grid-cols-4 mx-6 md:gap-6">
-          {/* Desktop */}
-          <div className="hidden md:block col-span-1">
-            <SidePanel
-              activeMenuItem={activeMenuItem}
-              onMenuItemClick={handleMenuItemClick}
-            />
-          </div>
-
-          <div className="block md:hidden mb-6 mt-12">
-            <div className="flex flex-col">
-              <div className="w-full h-[15vh]">
-                <img
-                  src="/images/me.jpg"
-                  alt="image of Angie"
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
-              <hr className="my-4" />
-              <div className="flex items-start justify-between">
-                <div>
-                  <h1 className="text-5xl font-extrabold mb-2">Angie Li</h1>
-                  <h2 className="text-xl">Front-End Developer</h2>
-                </div>
-                <MobileMenu activeMenuItem={activeMenuItem} handleMenuItemClick={handleMenuItemClick} />
-              </div>
-            </div>
-
-            <section className="mt-4">
-              <div className='flex gap-8'>
-                <a href='https://github.com/al2231' target="_blank" rel="noopener noreferrer"><FaGithub size={16} /></a>
-                <a href='https://www.linkedin.com/in/angie-3200-li/' target="_blank" rel="noopener noreferrer"><FaLinkedin size={16} /></a>
-                <a href="/Li_Resume.pdf" download><FaPaperclip size={16} /></a>
-              </div>
-            </section>
-          </div>
-          <div className="col-span-3 flex flex-col my-8 gap-36 md:pl-12">
-            <section id="projects" ref={projectsRef} data-menu="Projects">
-              <Projects visible={showHeader} />
-            </section>
-            <section id="work-experiences" ref={workRef} data-menu="Work Experiences">
-              <WorkExperiences />
-            </section>
-            <section id="about" ref={aboutRef} data-menu="About">
-              <About />
-            </section>
-            <FooterModal />
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-4 mx-6 md:gap-6">
+        {/* Desktop */}
+        <div className="hidden md:block col-span-1">
+          <SidePanel
+            activeMenuItem={activeMenuItem}
+            onMenuItemClick={handleMenuItemClick}
+          />
         </div>
 
-      {/* </motion.div> */}
+        <div className="block md:hidden mb-6 mt-12">
+          <div className="flex flex-col">
+            <div className="w-full h-[15vh]">
+              <img
+                src="/images/me.jpg"
+                alt="image of Angie"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
+            <hr className="my-4" />
+            <div className="flex items-start justify-between">
+              <div>
+                <h1 className="text-5xl font-extrabold mb-2">Angie Li</h1>
+                <h2 className="text-xl">Front-End Developer</h2>
+              </div>
+              <MobileMenu activeMenuItem={activeMenuItem} handleMenuItemClick={handleMenuItemClick} />
+            </div>
+          </div>
+
+          <section className="mt-4">
+            <div className='flex gap-8'>
+              <a href='https://github.com/al2231' target="_blank" rel="noopener noreferrer"><FaGithub size={16} /></a>
+              <a href='https://www.linkedin.com/in/angie-3200-li/' target="_blank" rel="noopener noreferrer"><FaLinkedin size={16} /></a>
+              <a href="/Li_Resume.pdf" download><FaPaperclip size={16} /></a>
+            </div>
+          </section>
+        </div>
+        <div className="col-span-3 flex flex-col my-8 gap-36 md:pl-12">
+          <section id="projects" ref={projectsRef} data-menu="Projects">
+            <Projects visible={showHeader} />
+          </section>
+          <section id="work-experiences" ref={workRef} data-menu="Work Experiences">
+            <WorkExperiences />
+          </section>
+          <section id="about" ref={aboutRef} data-menu="About">
+            <About />
+          </section>
+          <FooterModal />
+        </div>
+      </div>
     </>
   );
 }
@@ -228,17 +177,26 @@ export function Projects({ visible }) {
         ))}
       </div>
       {/* bg-zinc-300/30 */}
-      <p className="flex items-center group w-fit
-        px-8 py-4 bg-zinc-600/30 rounded-2xl ">
-        <a href="./projects">
-          View Project Archives
-        </a>
-        <FaArrowRight
-          className="ml-2 transition-transform duration-300 group-hover:translate-x-3"
-          size={24}
-        />
-      </p>
+      <motion.a
+        href="./projects"
+        className="flex items-center w-fit px-8 py-4 bg-zinc-600/30 rounded-2xl"
+        initial="rest"
+        whileHover="hover"
+        animate="rest"
+      >
+        <span>View Project Archives</span>
 
+        <motion.span
+          className="ml-2"
+          variants={{
+            rest: { x: 0 },
+            hover: { x: 12 }
+          }}
+          transition={{ duration: 0.27, ease: "easeOut" }}
+        >
+          <FaArrowRight size={24} />
+        </motion.span>
+      </motion.a>
     </div>
   )
 }
@@ -284,19 +242,30 @@ export function WorkExperiences() {
       </div>
       {/* bg-zinc-300/30 */}
       <div>
-        <p className="flex items-center group w-fit
-        px-8 py-4 bg-zinc-600/30 rounded-2xl ">
-          <a href="./resume">
-            View Full Resume
-          </a>
-          <FaArrowRight
-            className="ml-2 transition-transform duration-300 group-hover:translate-x-3"
-            size={24}
-          />
-        </p>
+
         {/* <p>
           **Check out my LinkedIn for fuller experience
         </p> */}
+        <motion.a
+          href="./resume"
+          className="flex items-center w-fit px-8 py-4 bg-zinc-600/30 rounded-2xl"
+          initial="rest"
+          whileHover="hover"
+          animate="rest"
+        >
+          <span>View Full Resume</span>
+
+          <motion.span
+            className="ml-2"
+            variants={{
+              rest: { x: 0 },
+              hover: { x: 12 }
+            }}
+            transition={{ duration: 0.27, ease: "easeOut" }}
+          >
+            <FaArrowRight size={24} />
+          </motion.span>
+        </motion.a>
       </div>
     </div>
   )

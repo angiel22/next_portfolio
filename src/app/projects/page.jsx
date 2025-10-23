@@ -35,7 +35,7 @@ export default function ProjectsTable() {
                     <tr>
                         <td className="border px-4 py-2">2025</td>
                         <td className="border px-4 py-2">
-                            <a href="https://www.figma.com/design/VokTLGHSGJlxVVPd6M9UbV/Shark-Buddy--Make-a-thon?node-id=2001-2&t=jKpvBlEVTMZRaiX3-1" className="text-blue-600 hover:underline">
+                            <a href="https://www.figma.com/design/VokTLGHSGJlxVVPd6M9UbV/Shark-Buddy--Make-a-thon?node-id=2001-2&t=jKpvBlEVTMZRaiX3-1" className="text-blue-600 hover:underline" target="_blank">
                                 Shark Buddy
                             </a>
                         </td>
@@ -58,7 +58,7 @@ export default function ProjectsTable() {
                     <tr>
                         <td className="border px-4 py-2">* 2025</td>
                         <td className="border px-4 py-2">
-                            <a href="https://anotetoyou.cad.rit.edu/" className="text-blue-600 hover:underline">
+                            <a href="https://anotetoyou.cad.rit.edu/" className="text-blue-600 hover:underline" target="_blank">
                                 A Note To You
                             </a>
                         </td>
@@ -68,7 +68,7 @@ export default function ProjectsTable() {
                     <tr>
                         <td className="border px-4 py-2">2024 (Academic)</td>
                         <td className="border px-4 py-2">
-                            <a href="https://www.figma.com/design/AwR10EsKteJGjsMn6dUN06/Birdfeed?node-id=0-1&t=h7S7xOybNfxrrwHd-1" className="text-blue-600 hover:underline">
+                            <a href="https://www.figma.com/design/AwR10EsKteJGjsMn6dUN06/Birdfeed?node-id=0-1&t=h7S7xOybNfxrrwHd-1" className="text-blue-600 hover:underline" target="_blank">
                                 BirdFeed
                             </a>
                         </td>
@@ -78,7 +78,7 @@ export default function ProjectsTable() {
                     <tr>
                         <td className="border px-4 py-2">2024 (Academic)</td>
                         <td className="border px-4 py-2">
-                            <a href="https://www.figma.com/proto/jBZjzbMAcKbbaNTiYJNYgF/260-RIT-Parking-App?node-id=104-58&t=brlvQiUTg1vCie2P-1&starting-point-node-id=104%3A58" className="text-blue-600 hover:underline">
+                            <a href="https://www.figma.com/proto/jBZjzbMAcKbbaNTiYJNYgF/260-RIT-Parking-App?node-id=104-58&t=brlvQiUTg1vCie2P-1&starting-point-node-id=104%3A58" className="text-blue-600 hover:underline" target="_blank">
                                 RIT Parking App
                             </a>
                         </td>
@@ -100,7 +100,7 @@ export default function ProjectsTable() {
                     <tr>
                         <td className="border px-4 py-2">* 2023 (Academic)</td>
                         <td className="border px-4 py-2">
-                            <a href="https://people.rit.edu/al2231/ISTE340/project2/" className="text-blue-600 hover:underline">
+                            <a href="https://people.rit.edu/al2231/ISTE340/project2/" className="text-blue-600 hover:underline" target="_blank">
                                 RIT iSchool Page
                             </a>
                         </td>
@@ -110,7 +110,7 @@ export default function ProjectsTable() {
                     <tr>
                         <td className="border px-4 py-2">2023 (Academic)</td>
                         <td className="border px-4 py-2">
-                            <a href="https://people.rit.edu/al2231/ISTE340/project1/iste340p1.html" className="text-blue-600 hover:underline">
+                            <a href="https://people.rit.edu/al2231/ISTE340/project1/iste340p1.html" className="text-blue-600 hover:underline" target="_blank">
                                 Dynamic Menu Ordering
                             </a>
                         </td>
@@ -120,7 +120,7 @@ export default function ProjectsTable() {
                     <tr>
                         <td className="border px-4 py-2">* 2023</td>
                         <td className="border px-4 py-2">
-                            <a href="https://devpost.com/software/forme-5h8m20" className="text-blue-600 hover:underline">
+                            <a href="https://devpost.com/software/forme-5h8m20" className="text-blue-600 hover:underline" target="_blank">
                                 forMe
                             </a>
                         </td>
@@ -130,7 +130,7 @@ export default function ProjectsTable() {
                     <tr>
                         <td className="border px-4 py-2">2023 (Academic)</td>
                         <td className="border px-4 py-2">
-                            <a href="https://people.rit.edu/al2231/ISTE240/projects/group/index.php" className="text-blue-600 hover:underline">
+                            <a href="https://people.rit.edu/al2231/ISTE240/projects/group/index.php" className="text-blue-600 hover:underline" target="_blank">
                                 Ultimate UNIX Guide
                             </a>
                         </td>
