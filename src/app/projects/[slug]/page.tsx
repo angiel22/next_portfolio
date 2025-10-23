@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { PROJECTS } from '../../data'
 import CarouselClient from './CarouselClient'
+import AnimatedProjectCard from '../../../components/AnimatedProjectCard'
 import type { Project } from '../../data'
 
 type Params = { params: { slug: string } }
@@ -20,7 +20,7 @@ export default function ProjectPage({ params }: Params) {
       <div className="flex justify-between items-center">
         <Link href="../../" className="text-zinc-300">← Back to projects</Link>
       </div>
-      
+
       <CarouselClient />
 
       <header className="flex flex-col md:flex-row md:justify-between items-start gap-4 p-6">
@@ -74,7 +74,7 @@ export default function ProjectPage({ params }: Params) {
             //   />
             // </p>
             <p className="mt-4">
-              
+
               <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-zinc-300 underline">
                 View project repository / live site
               </a>
@@ -93,18 +93,11 @@ export default function ProjectPage({ params }: Params) {
           {project.related?.length ? (
             <div className="bg-zinc-950 p-4 rounded-[12px]">
               <h4 className="font-medium text-zinc-100">View Other Projects</h4>
-              <div className="mt-2 space-y-2">
+              <div className="mt-2 space-y-4">
                 {project.related.map((id) => {
                   const r = PROJECTS.find(p => p.id === id)
                   return r ? (
-                    <Link key={r.id} href={`/projects/${r.slug}`} className="text-zinc-300 hover:underline block">
-                      <div className="flex items-center gap-3">
-                        <div className="relative w-12 h-8">
-                          <Image src={r.image} alt={r.name} fill className="object-cover rounded" />
-                        </div>
-                        <span>{r.name}</span>
-                      </div>
-                    </Link>
+                    <AnimatedProjectCard key={r.id} project={r} />
                   ) : null
                 })}
               </div>

@@ -73,7 +73,7 @@ export const PROJECTS: Project[] = [
       'Balancing anonymity and moderation was a key challenge.',
     outcome:
       'The site successfully launched with hundreds of student submissions and was praised by the partnering organization for its thoughtful design and emotional impact.',
-    related: ['project2'],
+    related: ['project2', 'project3'],
   },
   {
     id: 'project2',
@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
       'Time constraints and information accuracy were major challenges. We worked rapidly to design a user-centered flow while ensuring data sources were medically verified.',
     outcome:
       'The project won the M&T “Best UI/UX” award for its intuitive design and educational impact. The experience highlighted the importance of designing for accessibility and trust.',
-    related: ['project1', 'project3'],
+    related: ['project3', 'project1'],
   },
   {
     id: 'project3',
@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
       'Ensuring design consistency with RIT brand guidelines while introducing new components required careful iteration and collaboration with faculty.',
     outcome:
       'The new interface received positive feedback from students and staff, and several components were integrated into the live iSchool environment.',
-    related: ['project2'],
+    related: ['project1', 'project2'],
   },
 ]
 
@@ -208,13 +208,13 @@ export const VERSIONS: Version[] = [
     },
     {
         time: '2024',
-        name: 'Vanilla Portfolio 1.0 *',
+        name: 'Vanilla Portfolio 1.0',
         link: '/p_v3/index.html',
         id: 'v3'
     },
     {
         time: '03.2025',
-        name: 'Vanilla Portfolio 2.0 *',
+        name: 'Vanilla Portfolio 2.0',
         link: '/p_v4/index.html',
         id: 'v4'
     },

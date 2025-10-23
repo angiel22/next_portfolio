@@ -30,7 +30,7 @@ export default function ProjectsTable() {
                         <td className="border px-4 py-2">2025</td>
                         <td className="border px-4 py-2">BirdBox Monitor</td>
                         <td className="border px-4 py-2">Senior Capstone</td>
-                        <td className="border px-4 py-2">Full project process from requirements gathering to hardware and software integration for sponsor.</td>
+                        <td className="border px-4 py-2">Building a bird box monitor for occupation and nesting data collection. Full project process from requirements gathering to hardware and software integration for sponsor.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2025</td>
@@ -83,13 +83,13 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">ISTE 260</td>
-                        <td className="border px-4 py-2">Design process walkthrough. Prototyped with Figma.</td>
+                        <td className="border px-4 py-2">Design process walkthrough of a parking assistance app for the RIT campus. Prototyped with Figma.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2023</td>
                         <td className="border px-4 py-2">WOREO</td>
                         <td className="border px-4 py-2">Personal [Discontinued]</td>
-                        <td className="border px-4 py-2">Platforming game built in Unity, using Bitbucket.</td>
+                        <td className="border px-4 py-2">2D platforming game built in Unity, using Bitbucket.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2023</td>
@@ -105,7 +105,7 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">ISTE 340</td>
-                        <td className="border px-4 py-2">Built with React, redesigning frontend with data from api, prioritizing components.</td>
+                        <td className="border px-4 py-2">Built with React, redesigning frontend with data from web API, prioritizing components.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2023 (Academic)</td>
@@ -115,7 +115,7 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">ISTE 340</td>
-                        <td className="border px-4 py-2">Dynamic page population with created data using JS, HTML, CSS.</td>
+                        <td className="border px-4 py-2">Dynamic page population with sample data using JS, HTML, CSS.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">* 2023</td>
@@ -125,7 +125,7 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">WiCHacks</td>
-                        <td className="border px-4 py-2">Utilized: HTML, CSS, JS, APIs, Figma</td>
+                        <td className="border px-4 py-2">Health mobile app built with HTML, CSS, JS, APIs. Prototyped with Figma.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2023 (Academic)</td>
@@ -135,13 +135,13 @@ export default function ProjectsTable() {
                             </a>
                         </td>
                         <td className="border px-4 py-2">ISTE 240</td>
-                        <td className="border px-4 py-2">Utilized: php, phpMyAdmin, CSS</td>
+                        <td className="border px-4 py-2">The ultimate guide for students covering UNIX topics. Built with php, phpMyAdmin, CSS, and JS.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2021 - 2022</td>
                         <td className="border px-4 py-2">Robotic Arm</td>
                         <td className="border px-4 py-2">Internship</td>
-                        <td className="border px-4 py-2">Utilized: Arduino, Autodesk Inventor, 3D Printing</td>
+                        <td className="border px-4 py-2">Building a functional robotic arm from scratch to then use in instructional material. Utilized Arduino, Autodesk Inventor, and 3D Printing.</td>
                     </tr>
                 </tbody>
             </table>

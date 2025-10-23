@@ -135,15 +135,19 @@ export function Projects({ visible }) {
       <h3 className={`${visible ? "block" : "hidden"} mb-5 text-lg font-medium`}>Highlighted Projects</h3>
       <div className="flex flex-col gap-6 mb-4">
         {PROJECTS.map((project) => (
-          <a
-            // bg-zinc-300/30
-            className="relative overflow-hidden flex flex-col md:flex-row gap-4 rounded-2xl 
-              p-8 bg-zinc-600/30
-             ring-1 ring-transparent transition-all duration-300
-             hover:ring-2 hover:ring-blue-500 hover:ring-inset hover:shadow-[inset_0_0_10px_rgba(59,130,246,0.8)]"
+          <motion.a
             href={`/projects/${project.slug}`}
             rel="noopener noreferrer"
             key={project.name}
+            className="relative overflow-hidden flex flex-col md:flex-row gap-4 rounded-2xl 
+             p-8 bg-zinc-600/30 ring-1 ring-transparent"
+            initial={{ scale: 1, boxShadow: "inset 0 0 0 rgba(0,0,0,0)" }}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: "inset 0 0 10px rgba(59,130,246,0.8)",
+              ringWidth: 2,
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             {/* bg-zinc-50/40 ring-zinc-200/50*/}
             <div className="relative basis-1/2 flex-shrink-0 rounded-2xl p-1 
@@ -166,14 +170,14 @@ export function Projects({ visible }) {
                   <span
                     key={tool}
                     // bg-zinc-200/70 text-zinc-700
-                    className="rounded-full bg-zinc-800/70 px-3 py-1 text-sm text-zinc-300"
+                    className="rounded-full bg-zinc-800/70 px-3 py-1 text-sm text-zinc-300 border border-blue-600"
                   >
                     {tool}
                   </span>
                 ))}
               </div>
             </div>
-          </a>
+          </motion.a>
         ))}
       </div>
       {/* bg-zinc-300/30 */}

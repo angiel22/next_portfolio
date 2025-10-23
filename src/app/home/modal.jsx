@@ -13,6 +13,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Modal from 'react-modal';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { BsRewindCircle } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
@@ -26,9 +27,16 @@ const TimeDisplay = dynamic(() => import("../../utils/getDate"), {
 
 export default function FooterModal() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [showContent, setShowContent] = useState(false);
 
-    const openModal = () => setModalIsOpen(true);
-    const closeModal = () => setModalIsOpen(false);
+    const openModal = () => {
+        setModalIsOpen(true);
+        setShowContent(true);
+    };
+
+    const closeModal = () => {
+        setShowContent(false);
+    };
 
     return (
         <section className="flex flex-col gap-6 w-[80%] text-justify 
@@ -51,85 +59,102 @@ export default function FooterModal() {
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
                     contentLabel="Rewind Modal"
-                    className='bg-zinc-900 m-8 h-[90%] rounded-2xl shadow-lg'
-                // bg-zinc-300
+                    className="absolute bottom-0 right-0 m-12 h-[70%] w-[70%] bg-zinc-900 rounded-2xl shadow-lg flex flex-col"
+                    overlayClassName="fixed inset-0 bg-black/70 flex justify-end items-end"
                 >
-                    {/* border-zinc-300  */}
-                    <div className="flex justify-between items-center p-4 border-b border-zinc-700">
-                        {/* text-zinc-800 */}
-                        <h2 className="text-lg font-semibold text-zinc-100">
-                            Portfolio Evolution
-                        </h2>
-                        <button
-                            onClick={closeModal}
-                            // text-zinc-600
-                            className="flex items-center gap-1 text-zinc-300 hover:text-red-500"
-                        >
-                            <IoIosClose size={28} />
-                            Close
-                        </button>
-                    </div>
+                    <motion.div
+                        key="modalContent"
+                        initial={{ opacity: 0, scale: 0.8, x: 100, y: 100 }}
+                        animate={showContent ? { opacity: 1, scale: 1, x: 0, y: 0 } : { opacity: 0, scale: 0.8, x: 100, y: 100 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                        onAnimationComplete={() => {
+                            if (!showContent) setModalIsOpen(false); // close modal after exit animation
+                        }}
+                        className="flex flex-col h-full w-full"
+                    >
+                        <div className="flex justify-between items-center p-4 border-b border-zinc-700 flex-shrink-0">
+                            <h2 className="text-lg font-semibold text-zinc-100">
+                                Portfolio Evolution
+                            </h2>
+                            <motion.button
+                                onClick={closeModal}
+                                className="flex items-center gap-1 text-zinc-300"
+                                whileHover={{ scale: 1.1, color: "#f87171" }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            >
+                                <IoIosClose size={28} />
+                                Close
+                            </motion.button>
+                        </div>
 
-                    <div className="flex flex-col justify-center p-6">
-                        <TimelineItem>
-                            {/* text-zinc-500 */}
-                            <TimelineOppositeContent className="text-zinc-400">
-                                2023
-                            </TimelineOppositeContent>
-                            <TimelineSeparator>
-                                <TimelineDot />
-                                <TimelineConnector />
-                            </TimelineSeparator>
-                            <TimelineContent>
-                                <button
-                                    className="px-4 py-2 rounded-lg bg-gray-500 text-white"
-                                >
-                                    React Portfolio 1.0
-                                </button>
-                            </TimelineContent>
-                        </TimelineItem>
-                        <Timeline>
-                            {VERSIONS.map((version) => (
-
-                                <TimelineItem className="flex w-full">
-                                    {/* text-zinc-500 */}
-                                    <TimelineOppositeContent className="text-zinc-400">
-                                        {version.time}
-                                    </TimelineOppositeContent>
-                                    <TimelineSeparator>
-                                        <TimelineDot />
-                                        <TimelineConnector />
-                                    </TimelineSeparator>
-                                    <TimelineContent className="flex-1">
-                                        <a
-                                            href={version.link}
-                                            className="block w-full md:w-fit text-center
-                                        px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
-                                        >
-                                            {version.name}
-                                        </a>
-                                    </TimelineContent>
-                                </TimelineItem>
-                            ))}
+                        <div className="flex-1 overflow-y-auto p-4">
                             <TimelineItem>
                                 {/* text-zinc-500 */}
                                 <TimelineOppositeContent className="text-zinc-400">
-                                    Current
+                                    2023
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
-                                    <TimelineDot variant="outlined" />
+                                    <TimelineDot />
+                                    <TimelineConnector />
                                 </TimelineSeparator>
                                 <TimelineContent>
                                     <button
-                                        onClick={closeModal}
-                                        className="px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
+                                        className="px-8 py-4 rounded-lg bg-gray-500 text-white"
                                     >
-                                        React Portfolio 2.0
+                                        React Portfolio 1.0
                                     </button>
                                 </TimelineContent>
                             </TimelineItem>
-                        </Timeline>
-                    </div>
+                            <Timeline>
+                                {VERSIONS.map((version) => (
+
+                                    <TimelineItem key={version.id} className="flex w-full p-4">
+                                        {/* text-zinc-500 */}
+                                        <TimelineOppositeContent className="text-zinc-400">
+                                            {version.time}
+                                        </TimelineOppositeContent>
+                                        <TimelineSeparator>
+                                            <TimelineDot />
+                                            <TimelineConnector />
+                                        </TimelineSeparator>
+                                        <TimelineContent className="flex-1">
+                                            <motion.a
+                                                href={version.link}
+                                                target="_blank"
+                                                className="block w-full md:w-fit text-center px-8 py-4 rounded-lg bg-blue-500 text-white"
+                                                whileHover={{
+                                                    scale: 1.05,
+                                                    backgroundColor: "#2563eb", // Tailwind bg-blue-600
+                                                }}
+                                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                            >
+                                                {version.name}
+                                            </motion.a>
+                                        </TimelineContent>
+                                    </TimelineItem>
+                                ))}
+                                <TimelineItem className="p-4">
+                                    {/* text-zinc-500 */}
+                                    <TimelineOppositeContent className="text-zinc-400">
+                                        Current
+                                    </TimelineOppositeContent>
+                                    <TimelineSeparator>
+                                        <TimelineDot variant="outlined" />
+                                    </TimelineSeparator>
+                                    <TimelineContent>
+                                        <motion.button
+                                            onClick={closeModal}
+                                            className="px-8 py-4 rounded-lg bg-blue-500 text-white"
+                                            whileHover={{ scale: 1.1, backgroundColor: "#2563eb" }}
+                                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                        >
+                                            React Portfolio 2.0
+                                        </motion.button>
+                                    </TimelineContent>
+                                </TimelineItem>
+                            </Timeline>
+                        </div>
+                    </motion.div>
                 </Modal>
             </div>
         </section >
