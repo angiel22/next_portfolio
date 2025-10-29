@@ -47,19 +47,34 @@ export default function FooterModal() {
             </div>
             <div id='modalEl'>
                 {/* bg-zinc-300/30 */}
-                <div className="flex items-center justify-around group w-full md:w-fit
+                <motion.button
+                    onClick={openModal}
+                    className="flex items-center justify-around group w-full md:w-fit
                      px-8 py-4 bg-zinc-600/30 rounded-2xl cursor-pointer"
-                    onClick={openModal}>
+                    initial="rest"
+                    whileHover="hover"
+                    animate="rest"
+                >
 
-                    <BsRewindCircle className="mr-2" size={24} />
-                    <p>Portfolio Evolution</p>
-                </div>
+                    <motion.span
+                        className="mr-2"
+                        variants={{
+                            rest: { rotate: 0 },
+                            hover: { rotate: -180 }
+                        }}
+                        transition={{ duration: 0.27, ease: "easeOut" }}
+                    >
+                        <BsRewindCircle size={24} />
+                    </motion.span>
+
+                    <span>Portfolio Evolution</span>
+                </motion.button>
 
                 <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
                     contentLabel="Rewind Modal"
-                    className="absolute bottom-0 right-0 m-12 h-[70%] w-[70%] bg-zinc-900 rounded-2xl shadow-lg flex flex-col"
+                    className="absolute bottom-0 right-0 m-12 h-[90%] w-[70%] bg-zinc-900 rounded-2xl shadow-lg flex flex-col"
                     overlayClassName="fixed inset-0 bg-black/70 flex justify-end items-end"
                 >
                     <motion.div

@@ -54,15 +54,15 @@ export const PROJECTS: Project[] = [
     link: 'https://anotetoyou.cad.rit.edu/',
     image: '/images/anotetoyou-mockup.png',
     hero: '/images/anotetoyou-mockup.png',
-    tools: ['JavaScript', 'Bootstrap', 'PHP'],
+    tools: ['JavaScript', 'Bootstrap', 'HTML/CSS'],
     date: 'Spring 2024',
     teamSize: 8,
     overview:
-      'The project was designed to give students a safe, creative outlet to share their emotions and experiences through anonymous notes. Our team collaborated with a local arts organization to ensure accessibility and inclusivity, while also focusing on a simple, responsive UI for both desktop and mobile.',
+      'The project was designed to give students a safe, creative outlet to share their emotions and experiences through anonymous notes. The whole project thinking about how to make art accessible for everyone. Our team collaborated with a local arts organization to ensure accessibility and inclusivity, while also focusing on a simple UI for desktop viewing.',
     features: [
       'Infinite schrolling',
-      'Moderated content review pipeline',
-      'Responsive and accessible design',
+      'Moderated content review',
+      'Community events',
     ],
     // samples: [
     //   '/images/anotetoyou-1.png',
@@ -70,9 +70,9 @@ export const PROJECTS: Project[] = [
     //   '/images/anotetoyou-3.png',
     // ],
     challenges:
-      'Balancing anonymity and moderation was a key challenge.',
+      'Balancing anonymity and moderation was a challenge in deciding what content to include.',
     outcome:
-      'The site successfully launched with hundreds of student submissions and was praised by the partnering organization for its thoughtful design and emotional impact.',
+      'The site successfully launched on a CAD (College of Art and Design) site with hundreds of student submissions and was recognized in the RIT Newsmaker section.',
     related: ['project2', 'project3'],
   },
   {
@@ -84,11 +84,11 @@ export const PROJECTS: Project[] = [
     link: 'https://devpost.com/software/forme-5h8m20',
     image: '/images/forme-mockup.png',
     hero: '/images/forme-mockup.png',
-    tools: ['HTML', 'CSS', 'JavaScript', 'Web API'],
+    tools: ['HTML', 'CSS', 'JavaScript', 'API'],
     date: 'Fall 2023',
     teamSize: 4,
     overview:
-      'forME is a hackathon project created in under 24 hours to provide an accessible platform for women seeking reliable health information. The app integrates mental health and reproductive health APIs, with a focus on simplicity and credibility.',
+      'forME is a hackathon project created in under 24 hours to provide an accessible mobile platform for women seeking reliable health information. The app integrates mental health components and reproductive health Open FDA APIs, with a focus on simplicity and credibility.',
     features: [
       'Searchable database of medications and birth control options',
       'Personalized content recommendations',
@@ -99,9 +99,9 @@ export const PROJECTS: Project[] = [
       '/images/forme-1.png',
     ],
     challenges:
-      'Time constraints and information accuracy were major challenges. We worked rapidly to design a user-centered flow while ensuring data sources were medically verified.',
+      'Time constraints and information accuracy were major challenges. We worked rapidly to design a user-centered flow while ensuring data sources accessed properly.',
     outcome:
-      'The project won the M&T “Best UI/UX” award for its intuitive design and educational impact. The experience highlighted the importance of designing for accessibility and trust.',
+      'The project won the M&T “Best UI/UX” award for its intuitive design and educational impact. The experience highlighted the importance of designing for accessibility and purpose.',
     related: ['project3', 'project1'],
   },
   {
@@ -117,20 +117,20 @@ export const PROJECTS: Project[] = [
     date: 'Spring 2024',
     teamSize: 1,
     overview:
-      'This project focused on improving the usability and visual design of the RIT iSchool website. The work involved modernizing the interface and implementing reusable React components to streamline future development.',
+      'This project focused on improving the usability and visual design of the RIT iSchool website based on the old API containing information. The work involved modernizing the interface and implementing reusable React components to streamline future development.',
     features: [
       'Modular React component design',
       'Improved navigation and accessibility',
-      'Custom styling consistent with RIT branding',
+      'Custom styling with consistent branding',
     ],
     samples: [
       '/images/ischool-1.png',
       '/images/ischool-2.png',
     ],
     challenges:
-      'Ensuring design consistency with RIT brand guidelines while introducing new components required careful iteration and collaboration with faculty.',
+      'Tasked with using a variety of different components to communicate and consume all of the data available on the API.',
     outcome:
-      'The new interface received positive feedback from students and staff, and several components were integrated into the live iSchool environment.',
+      'The new interface received positive feedback and functioned well. Was a great introduction and learning experience to frameworks and libraries as well as implementing them with non-local data.',
     related: ['project1', 'project2'],
   },
 ]

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { PROJECTS } from '../../data'
 import CarouselClient from './CarouselClient'
 import AnimatedProjectCard from '../../../components/AnimatedProjectCard'
+import AnimatedLink from "../../../components/AnimatedLink"
 import type { Project } from '../../data'
 
 type Params = { params: { slug: string } }
@@ -74,10 +75,7 @@ export default function ProjectPage({ params }: Params) {
             //   />
             // </p>
             <p className="mt-4">
-
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-zinc-300 underline">
-                View project repository / live site
-              </a>
+              <AnimatedLink href={project.link}/>
             </p>
           )}
         </div>
