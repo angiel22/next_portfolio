@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import { PROJECTS } from '../../data'
@@ -12,30 +12,56 @@ export default function CarouselClient() {
   const samples = project?.samples ?? []
 
   const [idx, setIdx] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   // reset index if slug changes
   useEffect(() => {
     setIdx(0)
   }, [slug])
 
-  if (!project || samples.length === 0) return null
-
   const prev = () => setIdx((i) => (i - 1 + samples.length) % samples.length)
   const next = () => setIdx((i) => (i + 1) % samples.length)
 
+  // auto-scroll effect
+  useEffect(() => {
+    if (!samples.length) return
+    if (paused) return
+
+    intervalRef.current = setInterval(() => {
+      setIdx((i) => (i + 1) % samples.length)
+    }, 2000)
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+  }, [samples.length, paused])
+
+  if (!project || samples.length === 0) return null
+
   return (
     <section className="space-y-3">
-      {/* <h3 className="text-xl font-medium text-zinc-100">Sample Photos</h3> */}
-
-      <div className="relative rounded-lg overflow-hidden bg-zinc-900 mx-12">
+      <div
+        className="relative rounded-lg overflow-hidden bg-zinc-900 mx-12"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
         <div className="h-64 md:h-144 relative">
           <Image src={samples[idx]} alt={`${project.name} sample ${idx}`} fill className="object-cover" />
         </div>
 
-        <button onClick={prev} aria-label="previous" className="absolute left-3 top-1/2 -translate-y-1/2 bg-zinc-800/60 p-2 rounded-full">
+        <button
+          onClick={prev}
+          aria-label="previous"
+          className="absolute left-3 top-1/2 -translate-y-1/2 bg-zinc-800/60 p-2 rounded-full"
+        >
           ‹
         </button>
-        <button onClick={next} aria-label="next" className="absolute right-3 top-1/2 -translate-y-1/2 bg-zinc-800/60 p-2 rounded-full">
+        <button
+          onClick={next}
+          aria-label="next"
+          className="absolute right-3 top-1/2 -translate-y-1/2 bg-zinc-800/60 p-2 rounded-full"
+        >
           ›
         </button>
 

@@ -74,7 +74,7 @@ export default function FooterModal() {
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
                     contentLabel="Rewind Modal"
-                    className="absolute bottom-0 right-0 m-12 h-[90%] w-[70%] bg-zinc-900 rounded-2xl shadow-lg flex flex-col"
+                    className="absolute bottom-0 right-0 m-8 md:m-12 h-[90%] md:w-[70%] bg-zinc-900 rounded-2xl shadow-lg flex flex-col"
                     overlayClassName="fixed inset-0 bg-black/70 flex justify-end items-end"
                 >
                     <motion.div

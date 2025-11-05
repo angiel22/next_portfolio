@@ -4,6 +4,7 @@ import { PROJECTS } from '../../data'
 import CarouselClient from './CarouselClient'
 import AnimatedProjectCard from '../../../components/AnimatedProjectCard'
 import AnimatedLink from "../../../components/AnimatedLink"
+import BackButton from "../../../components/BackButton"
 import type { Project } from '../../data'
 
 type Params = { params: { slug: string } }
@@ -19,7 +20,8 @@ export default function ProjectPage({ params }: Params) {
   return (
     <div className="space-y-6 py-12 px-8">
       <div className="flex justify-between items-center">
-        <Link href="../../" className="text-zinc-300">← Back to projects</Link>
+        {/* <Link href="../../" className="text-zinc-300">← Back to projects</Link> */}
+        <BackButton href="../../"/>
       </div>
 
       <CarouselClient />

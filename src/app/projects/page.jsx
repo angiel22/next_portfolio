@@ -1,15 +1,23 @@
 // projects/
 
-import { IoIosArrowBack } from "react-icons/io";
+import BackButton from "../../components/BackButton"
 
 export default function ProjectsTable() {
     return (
         <div className="m-8">
-            <div className="flex mb-4">
+            {/* <div className="flex mb-4">
                 <IoIosArrowBack size={24} />
                 <a href="../"> Back to Main Page</a>
-            </div>
-            <table className="table-auto border-collapse border border-gray-400 w-full text-left">
+            </div> */}
+            <BackButton/>
+
+            <header className="flex flex-col md:flex-row md:justify-between items-start gap-4 p-6">
+                <div>
+                    <h1 className="text-xl font-semibold text-zinc-100">Project Archives</h1>
+                    <p className="text-sm text-zinc-400 mt-1">Full list of projects I've worked on for record keeping</p>
+                </div>
+            </header>
+            <table className="table-auto border border-gray-400 text-left mx-6">
                 <thead>
                     {/* bg-zinc-300 */}
                     <tr className="bg-gray-700">
@@ -32,7 +40,7 @@ export default function ProjectsTable() {
                         <td className="border px-4 py-2">Senior Capstone</td>
                         <td className="border px-4 py-2">Building a bird box monitor for occupation and nesting data collection. Full project process from requirements gathering to hardware and software integration for sponsor.</td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                         <td className="border px-4 py-2">2025</td>
                         <td className="border px-4 py-2">
                             <a href="https://www.figma.com/design/VokTLGHSGJlxVVPd6M9UbV/Shark-Buddy--Make-a-thon?node-id=2001-2&t=jKpvBlEVTMZRaiX3-1" className="text-blue-600 hover:underline" target="_blank">
@@ -41,7 +49,7 @@ export default function ProjectsTable() {
                         </td>
                         <td className="border px-4 py-2">Personal - New Media</td>
                         <td className="border px-4 py-2">Use of new Figma Make feature to create an AR app for the playground.</td>
-                    </tr>
+                    </tr> */}
 
                     {/* Past */}
                     <tr>
@@ -53,7 +61,7 @@ export default function ProjectsTable() {
                         <td className="border px-4 py-2">2025</td>
                         <td className="border px-4 py-2">GreenSphere</td>
                         <td className="border px-4 py-2">ISTE 454/456</td>
-                        <td className="border px-4 py-2">IOS/Android Sustainability App with Swift and Kotlin.</td>
+                        <td className="border px-4 py-2">IOS/Android Sustainability App built with Swift and Kotlin.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">* 2025</td>
@@ -87,14 +95,14 @@ export default function ProjectsTable() {
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2023</td>
-                        <td className="border px-4 py-2">WOREO</td>
-                        <td className="border px-4 py-2">Personal [Discontinued]</td>
+                        <td className="border px-4 py-2">WOREO [Discontinued]</td>
+                        <td className="border px-4 py-2">Personal</td>
                         <td className="border px-4 py-2">2D platforming game built in Unity, using Bitbucket.</td>
                     </tr>
                     <tr>
                         <td className="border px-4 py-2">2023</td>
-                        <td className="border px-4 py-2">BHASE</td>
-                        <td className="border px-4 py-2">UX Club [Discontinued]</td>
+                        <td className="border px-4 py-2">BHASE [Discontinued]</td>
+                        <td className="border px-4 py-2">UX Club</td>
                         <td className="border px-4 py-2">Budgeting webapp catered to college students, focused on UX design process, such as user interviews, etc.</td>
                     </tr>
                     <tr>

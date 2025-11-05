@@ -130,7 +130,8 @@ export const PROJECTS: Project[] = [
     challenges:
       'Tasked with using a variety of different components to communicate and consume all of the data available on the API.',
     outcome:
-      'The new interface received positive feedback and functioned well. Was a great introduction and learning experience to frameworks and libraries as well as implementing them with non-local data.',
+      'The new interface received positive feedback and functioned well. Was a great introduction and learning experience to frameworks and libraries as well as implementing them with non-local data. Then converted to C# based front end with jQuery on Visual Studio .NET.',
+      // Find here: https://github.com/al2231/iSchoolMVCWebApp 
     related: ['project1', 'project2'],
   },
 ]
