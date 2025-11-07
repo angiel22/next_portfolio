@@ -1,6 +1,7 @@
 // projects/
 
 import BackButton from "../../components/BackButton"
+import Link from "next/link";
 
 export default function ProjectsTable() {
     return (
@@ -9,7 +10,7 @@ export default function ProjectsTable() {
                 <IoIosArrowBack size={24} />
                 <a href="../"> Back to Main Page</a>
             </div> */}
-            <BackButton/>
+            <BackButton />
 
             <header className="flex flex-col md:flex-row md:justify-between items-start gap-4 p-6">
                 <div>
@@ -39,6 +40,16 @@ export default function ProjectsTable() {
                         <td className="border px-4 py-2">BirdBox Monitor</td>
                         <td className="border px-4 py-2">Senior Capstone</td>
                         <td className="border px-4 py-2">Building a bird box monitor for occupation and nesting data collection. Full project process from requirements gathering to hardware and software integration for sponsor.</td>
+                    </tr>
+                    <tr>
+                        <td className="border px-4 py-2">2025</td>
+                        <td className="border px-4 py-2">
+                            <Link href="/hamster" className="text-blue-600 hover:underline">
+                                You're the Hamster
+                            </Link>
+                        </td>
+                        <td className="border px-4 py-2">Personal</td>
+                        <td className="border px-4 py-2">Based on facial and pose tracking, the program maps unto a set of "hamster" images. Built using TouchDesigner, still working on the facial bounds for accuracy.</td>
                     </tr>
                     {/* <tr>
                         <td className="border px-4 py-2">2025</td>

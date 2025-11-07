@@ -87,7 +87,7 @@ export default function Home() {
 
         <div className="block md:hidden mb-6 mt-12">
           <div className="flex flex-col">
-            <div className="w-full h-[15vh]">
+            <div className="w-full h-[20vh] sm:h-[30vh]">
               <img
                 src="/images/me.jpg"
                 alt="image of Angie"
