@@ -21,7 +21,7 @@ export default function AnimatedLink({ href, className = "" }) {
         mass: 0.5,
       }}
     >
-      View project repository/live site
+      View live site &gt;
     </motion.a>
   );
 }

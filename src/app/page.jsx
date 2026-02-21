@@ -51,15 +51,17 @@ export default function Home() {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5, // 50% of section in view = active
+      threshold: [0.1, 0.25, 0.5],
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveMenuItem(entry.target.dataset.menu);
-        }
-      });
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visible.length > 0) {
+        setActiveMenuItem(visible[0].target.dataset.menu);
+      }
     }, options);
 
     const sections = [projectsRef.current, workRef.current, aboutRef.current];

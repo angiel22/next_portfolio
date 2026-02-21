@@ -41,7 +41,7 @@ export default function SidePanel({ activeMenuItem, onMenuItemClick }) {
                             })}
                         </h1>
                         <h2 className="text-md md:text-xl">Front-End Developer</h2>
-                        <h3 className='text-sm md:text-md italic'>Currently a Design Co-Op @ <a href='lindendigitalmarketing.com' target="_blank" rel="noopener noreferrer">Linden Digital Marketing</a></h3>
+                        <h3 className='text-md md:text-md italic'>Currently a Design Co-Op @ <a href='lindendigitalmarketing.com' target="_blank" rel="noopener noreferrer">Linden Digital Marketing</a></h3>
                     </div>
                 </div>
 

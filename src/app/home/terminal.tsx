@@ -32,8 +32,8 @@ export default function TerminalBackground() {
 
         const rows: Row[] = Array.from({ length: numRows }, (_, i) => ({
             y: i * rowHeight + rowHeight,
-            x: Math.random() * -canvas.width,
-            speed: 1.5 + Math.random() * 3,
+            x: Math.random() * canvas.width + canvas.width,
+            speed: 2 + Math.random() * 3,
             chars: Array.from({ length: 40 }, () => chars[Math.floor(Math.random() * chars.length)]),
             length: 20 + Math.floor(Math.random() * 30),
             alpha: 0.2 + Math.random() * 0.4,
@@ -44,17 +44,11 @@ export default function TerminalBackground() {
             ctx.font = `bold ${fontSize}px monospace`
 
             rows.forEach((row) => {
-                row.x += row.speed
+                row.x -= row.speed  // ← move left instead of right
 
-                // randomly mutate a char
-                if (Math.random() > 0.85) {
-                    const idx = Math.floor(Math.random() * row.chars.length)
-                    row.chars[idx] = chars[Math.floor(Math.random() * chars.length)]
-                }
-
-                // draw each char in the row with fading trail
+                // draw trail going rightward behind the lead char
                 for (let i = 0; i < row.length; i++) {
-                    const cx = row.x - i * fontSize
+                    const cx = row.x + i * fontSize
                     if (cx < 0 || cx > canvas.width) continue
 
                     const fade = 1 - i / row.length
@@ -62,9 +56,9 @@ export default function TerminalBackground() {
                     ctx.fillText(row.chars[i % row.chars.length], cx, row.y)
                 }
 
-                // reset when fully off screen to the right
-                if (row.x - row.length * fontSize > canvas.width) {
-                    row.x = -row.length * fontSize
+                // reset when fully off screen to the left
+                if (row.x + row.length * fontSize < 0) {
+                    row.x = canvas.width + row.length * fontSize
                     row.speed = 1.5 + Math.random() * 3
                     row.length = 20 + Math.floor(Math.random() * 30)
                     row.alpha = 0.2 + Math.random() * 0.4

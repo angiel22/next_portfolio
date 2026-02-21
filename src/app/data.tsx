@@ -1,46 +1,48 @@
-export type Project = {
-    id: string
-    name: string
-    description: string
-    link: string
-    image: string
-    tools: string[]
+import { ReactNode } from "react"
 
-    // new / required-for-page fields
-    slug: string            // URL slug (e.g. 'birdbox-cellular-dashboard')
-    date?: string            // human-readable date (e.g. 'June 2025' or '2025-06-12')
-    teamSize?: number
-    hero?: string
-    overview?: string
-    features?: string[]
-    samples?: string[]       // sample photos for carousel (array of image paths)
-    challenges?: string
-    outcome?: string
-    related?: string[]     // array of related project IDs (for clickable links)
+export type Project = {
+  id: string
+  name: string
+  description: string
+  link: string
+  image: string
+  tools: string[]
+
+  // new / required-for-page fields
+  slug: string            // URL slug (e.g. 'birdbox-cellular-dashboard')
+  date?: string            // human-readable date (e.g. 'June 2025' or '2025-06-12')
+  teamSize?: number
+  hero?: string
+  overview?: string
+  features?: string[]
+  samples?: string[]       // sample photos for carousel (array of image paths)
+  challenges?: string
+  outcome?: ReactNode
+  related?: string[]     // array of related project IDs (for clickable links)
 }
 
 
 type WorkExperience = {
-    company: string
-    title: string
-    description: string
-    start: string
-    end: string
-    id: string
-    tools: string[]
+  company: string
+  title: string
+  description: string
+  start: string
+  end: string
+  id: string
+  tools: string[]
 }
 
 type Skill = {
-    name: string
-    description: string
-    id: string
+  name: string
+  description: string
+  id: string
 }
 
 type Version = {
-    time: string
-    name: string
-    link: string
-    id: string
+  time: string
+  name: string
+  link: string
+  id: string
 }
 
 
@@ -81,7 +83,7 @@ export const PROJECTS: Project[] = [
     name: 'forME',
     description:
       'M&T Best UI/UX Winning Project: Developed a mobile application within a 24-hour timeframe with a specific focus on educating women about the latest mental health medications and birth control options available in the market.',
-    link: 'https://devpost.com/software/forme-5h8m20',
+    link: 'https://superlative-hotteok-88a6bb.netlify.app/',
     image: '/images/forme-mockup.png',
     hero: '/images/forme-mockup.png',
     tools: ['HTML', 'CSS', 'JavaScript', 'API'],
@@ -101,7 +103,15 @@ export const PROJECTS: Project[] = [
     challenges:
       'Time constraints and information accuracy were major challenges. We worked rapidly to design a user-centered flow while ensuring data sources accessed properly.',
     outcome:
-      'The project won the M&T “Best UI/UX” award for its intuitive design and educational impact. The experience highlighted the importance of designing for accessibility and purpose.',
+      (
+        <>
+          The project won the{' '}
+          <a href="https://devpost.com/software/forme-5h8m20" target="_blank" rel="noopener noreferrer" className="text-zinc-300 underline hover:text-white">
+            M&T "Best UI/UX" award
+          </a>{' '}
+          for its intuitive design and educational impact. The experience highlighted the importance of designing for accessibility and purpose.
+        </>
+      ),
     related: ['project3', 'project1'],
   },
   {
@@ -131,98 +141,98 @@ export const PROJECTS: Project[] = [
       'Tasked with using a variety of different components to communicate and consume all of the data available on the API.',
     outcome:
       'The new interface received positive feedback and functioned well. Was a great introduction and learning experience to frameworks and libraries as well as implementing them with non-local data. Then converted to C# based front end with jQuery on Visual Studio .NET.',
-      // Find here: https://github.com/al2231/iSchoolMVCWebApp 
+    // Find here: https://github.com/al2231/iSchoolMVCWebApp 
     related: ['project1', 'project2'],
   },
 ]
 
 export const WORK_EXPERIENCES: WorkExperience[] = [
-    {
-        company: 'RIT Software Engineering',
-        title: 'Course Assistant',
-        description: 'Provide timely and constructive feedback for over 600 assignments, and support the grading process by maintaining accurate records and inputting into the university grading system. Offer additional academic support to 30 students during class and with clarification of Python course topics.',
-        start: '2023',
-        end: 'Present',
-        id: 'work1',
-        tools: ['Python', 'Peer Tutoring', 'Instructional Support'],
-    },
-    {
-        company: 'Charles River Development',
-        title: 'SWE Intern',
-        description: 'Worked with the Engineering QA team on converting over 25 automated test cases from front-end-based Silk4Net testing to back-end-based in-house API system tests. Utilized systems such as Jira/Confluence, TeamCity, and Perforce to stay updated with information, software, and files. Advanced financial domain knowledge familiarizing with software products produced and their interfaces.',
-        start: '2024',
-        end: '2024',
-        id: 'work2',
-        tools: ['Software Testing', 'Silk4Net', 'Cucumber'],
-    },
-    {
-        company: 'Protomatica CTE',
-        title: 'Project Intern',
-        description: 'Worked on a functional robotic arm; designed in Autodesk Inventor, 3D printed on Makerbot Replicator, coded and circuited with Arduino software in a collaborative team of three. Managed the project process with documentation and effective communication with employers throughout the year-long process.',
-        start: '2021',
-        end: '2022',
-        id: 'work3',
-        tools: ['Arduino', '3D Printing', 'Autodesk Inventor'],
-    },
+  {
+    company: 'RIT Software Engineering',
+    title: 'Course Assistant',
+    description: 'Provide timely and constructive feedback for over 600 assignments, and support the grading process by maintaining accurate records and inputting into the university grading system. Offer additional academic support to 30 students during class and with clarification of Python course topics.',
+    start: '2023',
+    end: 'Present',
+    id: 'work1',
+    tools: ['Python', 'Peer Tutoring', 'Instructional Support'],
+  },
+  {
+    company: 'Charles River Development',
+    title: 'SWE Intern',
+    description: 'Worked with the Engineering QA team on converting over 25 automated test cases from front-end-based Silk4Net testing to back-end-based in-house API system tests. Utilized systems such as Jira/Confluence, TeamCity, and Perforce to stay updated with information, software, and files. Advanced financial domain knowledge familiarizing with software products produced and their interfaces.',
+    start: '2024',
+    end: '2024',
+    id: 'work2',
+    tools: ['Software Testing', 'Silk4Net', 'Cucumber'],
+  },
+  {
+    company: 'Protomatica CTE',
+    title: 'Project Intern',
+    description: 'Worked on a functional robotic arm; designed in Autodesk Inventor, 3D printed on Makerbot Replicator, coded and circuited with Arduino software in a collaborative team of three. Managed the project process with documentation and effective communication with employers throughout the year-long process.',
+    start: '2021',
+    end: '2022',
+    id: 'work3',
+    tools: ['Arduino', '3D Printing', 'Autodesk Inventor'],
+  },
 ]
 
 export const SKILLS: Skill[] = [
-    {
-        name: 'Frontend Development',
-        description: 'building responsive, accessible interfaces with modern frameworks and tools.',
-        id: 'skill1'
-    },
-    {
-        name: 'Mobile Application Development',
-        description: 'developing mobile apps with tools such as Swift and Kotlin, for both IOS and Android',
-        id: 'skill2'
-    },
-    {
-        name: 'Backend Work',
-        description: 'creating and using SQL databases, connected to Java.',
-        id: 'skill3'
-    },
-    {
-        name: 'API Development & Integration',
-        description: 'utilitizing REST APIs to advance applications.',
-        id: 'skill4'
-    },
-    {
-        name: 'Mechatronics',
-        description: 'machinery, laser/plasma cutters, 3D printers, and 3D modeling.',
-        id: 'skill5'
-    },
+  {
+    name: 'Frontend Development',
+    description: 'building responsive, accessible interfaces with modern frameworks and tools.',
+    id: 'skill1'
+  },
+  {
+    name: 'Mobile Application Development',
+    description: 'developing mobile apps with tools such as Swift and Kotlin, for both IOS and Android',
+    id: 'skill2'
+  },
+  {
+    name: 'Backend Work',
+    description: 'creating and using SQL databases, connected to Java.',
+    id: 'skill3'
+  },
+  {
+    name: 'API Development & Integration',
+    description: 'utilitizing REST APIs to advance applications.',
+    id: 'skill4'
+  },
+  {
+    name: 'Mechatronics',
+    description: 'machinery, laser/plasma cutters, 3D printers, and 3D modeling.',
+    id: 'skill5'
+  },
 ]
 
 export const VERSIONS: Version[] = [
-    // {
-    //     time: '2023',
-    //     name: 'React Portfolio 1.0',
-    //     link: '/p_v1/index.html',
-    //     id: 'v1'
-    // },
-    {
-        time: '2024',
-        name: 'Vanilla Portfolio 0.5',
-        link: '/p_v2/index.html',
-        id: 'v2'
-    },
-    {
-        time: '2024',
-        name: 'Vanilla Portfolio 1.0',
-        link: '/p_v3/index.html',
-        id: 'v3'
-    },
-    {
-        time: '03.2025',
-        name: 'Vanilla Portfolio 2.0',
-        link: '/p_v4/index.html',
-        id: 'v4'
-    },
-    {
-        time: '07.2025',
-        name: 'Vanilla Portfolio 2.5',
-        link: '/p_v5/index.html',
-        id: 'v5'
-    },
+  // {
+  //     time: '2023',
+  //     name: 'React Portfolio 1.0',
+  //     link: '/p_v1/index.html',
+  //     id: 'v1'
+  // },
+  {
+    time: '2024',
+    name: 'Vanilla Portfolio 0.5',
+    link: '/p_v2/index.html',
+    id: 'v2'
+  },
+  {
+    time: '2024',
+    name: 'Vanilla Portfolio 1.0',
+    link: '/p_v3/index.html',
+    id: 'v3'
+  },
+  {
+    time: '03.2025',
+    name: 'Vanilla Portfolio 2.0',
+    link: '/p_v4/index.html',
+    id: 'v4'
+  },
+  {
+    time: '07.2025',
+    name: 'Vanilla Portfolio 2.5',
+    link: '/p_v5/index.html',
+    id: 'v5'
+  },
 ]
