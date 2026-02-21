@@ -16,30 +16,33 @@ export default function SidePanel({ activeMenuItem, onMenuItemClick }) {
                 <div>
                     <img src="/images/me.jpg" alt="image of Angie" className="object-cover w-full h-1/3 rounded-xl" />
                     <hr className="my-4" />
-                    <h1 className="text-5xl font-extrabold mb-2 flex gap-[2px]">
-                        {letters.map((char, i) => {
-                            const displayChar = char === " " ? "\u00A0" : char;
+                    <div className='flex flex-col gap-2'>
+                        <h1 className="text-5xl font-extrabold mb-2 flex gap-[2px]">
+                            {letters.map((char, i) => {
+                                const displayChar = char === " " ? "\u00A0" : char;
 
-                            return (
-                                <motion.span
-                                    key={`${char}-${i}`}
-                                    className="inline-block select-none"
-                                    style={{ display: "inline-block", willChange: "transform, color" }}
-                                    initial={{ y: 0, scale: 1, color: "#ffffff" }}
-                                    whileHover={{
-                                        y: -8,
-                                        scale: 1.06,
-                                        color: "#4299e1",
-                                        textShadow: "0px 6px 18px rgba(99,102,241,0.18)", // subtle glow
-                                    }}
-                                    transition={{ type: "spring", stiffness: 450, damping: 28, duration: 0.18 }}
-                                >
-                                    {displayChar}
-                                </motion.span>
-                            );
-                        })}
-                    </h1>
-                    <h2 className="text-xl">Front-End Developer</h2>
+                                return (
+                                    <motion.span
+                                        key={`${char}-${i}`}
+                                        className="inline-block select-none"
+                                        style={{ display: "inline-block", willChange: "transform, color" }}
+                                        initial={{ y: 0, scale: 1, color: "#ffffff" }}
+                                        whileHover={{
+                                            y: -8,
+                                            scale: 1.06,
+                                            color: "#4299e1",
+                                            textShadow: "0px 6px 18px rgba(99,102,241,0.18)", // subtle glow
+                                        }}
+                                        transition={{ type: "spring", stiffness: 450, damping: 28, duration: 0.18 }}
+                                    >
+                                        {displayChar}
+                                    </motion.span>
+                                );
+                            })}
+                        </h1>
+                        <h2 className="text-md md:text-xl">Front-End Developer</h2>
+                        <h3 className='text-sm md:text-md italic'>Currently a Design Co-Op @ <a href='lindendigitalmarketing.com' target="_blank" rel="noopener noreferrer">Linden Digital Marketing</a></h3>
+                    </div>
                 </div>
 
                 <nav>

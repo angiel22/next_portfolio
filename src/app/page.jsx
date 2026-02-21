@@ -252,6 +252,7 @@ export function WorkExperiences() {
         </p> */}
         <motion.a
           href="./resume"
+          target="_blank"
           className="flex items-center w-fit px-8 py-4 bg-zinc-600/30 rounded-2xl"
           initial="rest"
           whileHover="hover"

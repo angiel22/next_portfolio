@@ -46,7 +46,7 @@ export default function CarouselClient() {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className="h-64 md:h-144 relative">
+        <div className="h-auto md:h-[70vh] relative">
           <Image src={samples[idx]} alt={`${project.name} sample ${idx}`} fill className="object-cover" />
         </div>
 
