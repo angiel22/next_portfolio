@@ -5,16 +5,19 @@ import { useState, useEffect } from "react";
 
 export default function CurrentTime() {
   const [time, setTime] = useState("");
+  const [year, setYear] = useState("");
 
   useEffect(() => {
     const updateTime = () => {
-      setTime(new Date().toLocaleTimeString());
+      const now = new Date();
+      setTime(now.toLocaleTimeString());
+      setYear(now.getFullYear());
     };
 
-    updateTime(); // set initial time
+    updateTime();
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  return <p>{time}</p>;
+  return <p>{time} ©{year}</p>;
 }

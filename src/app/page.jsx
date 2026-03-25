@@ -78,9 +78,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-4 mx-6 md:gap-6">
+      <div className="flex mx-6 md:gap-6">
         {/* Desktop */}
-        <div className="hidden md:block col-span-1">
+        <div className="hidden md:flex md:flex-shrink-0 md:w-64">
           <SidePanel
             activeMenuItem={activeMenuItem}
             onMenuItemClick={handleMenuItemClick}
@@ -114,7 +114,7 @@ export default function Home() {
             </div>
           </section>
         </div>
-        <div className="col-span-3 flex flex-col my-8 gap-36 md:pl-12">
+        <div className="flex-1 min-w-0 flex flex-col my-8 gap-36 md:pl-12">
           <section id="projects" ref={projectsRef} data-menu="Projects">
             <Projects visible={showHeader} />
           </section>

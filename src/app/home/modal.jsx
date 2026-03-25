@@ -1,19 +1,16 @@
 // home/modal.jsx
 
 import { useState } from "react";
-
-// import CurrentTime from '../../utils/getDate';
 import dynamic from "next/dynamic";
 
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Modal from 'react-modal';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { BsRewindCircle } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
@@ -21,9 +18,8 @@ import { IoIosClose } from "react-icons/io";
 import { VERSIONS } from '../data';
 import TerminalBackground from "./terminal";
 
-
 const TimeDisplay = dynamic(() => import("../../utils/getDate"), {
-    ssr: false, // hydration error fix
+    ssr: false,
 });
 
 export default function FooterModal() {
@@ -41,22 +37,21 @@ export default function FooterModal() {
 
     return (
         <section className="flex flex-col gap-6 w-[80%] text-justify 
-            md:flex-row md:justify-between md:items-center md:w-full px-4">
+            md:flex-row md:justify-between md:items-center md:w-full pl-6 pr-4">
             <div className="md:w-1/2 opacity-70">
-                <p>Developed by me(Angie) using Next.js + Tailwind CSS. Rapid designed in Figma. </p>
-                <div className='flex'><TimeDisplay /> ©2025</div>
+                <p>Developed by me (Angie) using Next.js + Tailwind CSS. Rapid designed in Figma.</p>
+                <div className="flex"><TimeDisplay /></div>
             </div>
-            <div id='modalEl'>
-                {/* bg-zinc-300/30 */}
+
+            <div id="modalEl">
                 <motion.button
                     onClick={openModal}
                     className="flex items-center justify-around group w-full md:w-fit
-                     px-8 py-4 bg-zinc-600/30 rounded-2xl cursor-pointer"
+                               px-8 py-4 bg-zinc-600/30 rounded-2xl cursor-pointer"
                     initial="rest"
                     whileHover="hover"
                     animate="rest"
                 >
-
                     <motion.span
                         className="mr-2"
                         variants={{
@@ -67,7 +62,6 @@ export default function FooterModal() {
                     >
                         <BsRewindCircle size={24} />
                     </motion.span>
-
                     <span>Portfolio Evolution</span>
                 </motion.button>
 
@@ -75,69 +69,88 @@ export default function FooterModal() {
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
                     contentLabel="Rewind Modal"
-                    className="absolute bottom-0 right-0 m-8 md:m-12 h-[60%] w-[80%] md:h-[90%] md:w-[70%] bg-zinc-900 rounded-2xl shadow-lg flex flex-col"
-                    overlayClassName="fixed inset-0 bg-black/70 flex justify-end items-end"
+                    className="absolute bottom-0 right-0 m-6 md:m-10
+                                w-[90%] md:w-[420px]
+                                bg-zinc-900 rounded-2xl
+                                flex flex-col overflow-hidden"
+                    overlayClassName="fixed inset-0 bg-black/60 flex justify-end items-end z-50"
                 >
                     <motion.div
                         key="modalContent"
-                        initial={{ opacity: 0, scale: 0.8, x: 100, y: 100 }}
-                        animate={showContent ? { opacity: 1, scale: 1, x: 0, y: 0 } : { opacity: 0, scale: 0.8, x: 100, y: 100 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                        initial={{ opacity: 0, scale: 0.9, y: 40 }}
+                        animate={showContent
+                            ? { opacity: 1, scale: 1, y: 0 }
+                            : { opacity: 0, scale: 0.9, y: 40 }
+                        }
+                        transition={{ type: "spring", stiffness: 300, damping: 28 }}
                         onAnimationComplete={() => {
-                            if (!showContent) setModalIsOpen(false); // close modal after exit animation
+                            if (!showContent) setModalIsOpen(false);
                         }}
-                        className="flex flex-col h-full w-full relative"
+                        className="flex flex-col w-full relative"
+                        style={{ maxHeight: "80vh" }}
                     >
-
+                        {/* Terminal bg — sits behind everything */}
                         <TerminalBackground />
 
-                        <div className="flex justify-between items-center p-4 border-b border-zinc-700 bg-black flex-shrink-0 relative z-10">
-                            <h2 className="text-lg font-semibold text-zinc-100">
+                        {/* Header */}
+                        <div className="flex justify-between items-center px-5 py-4
+                                        border-b border-zinc-800 bg-zinc-950/80
+                                        flex-shrink-0 relative z-10">
+                            <h2 className="text-sm font-semibold tracking-widest uppercase text-zinc-400">
                                 Portfolio Evolution
                             </h2>
                             <motion.button
                                 onClick={closeModal}
-                                className="flex items-center gap-1 text-zinc-300"
-                                whileHover={{ scale: 1.1, color: "#f87171" }}
-                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                className="flex items-center gap-1 text-zinc-500 text-sm"
+                                whileHover={{ color: "#f87171" }}
+                                transition={{ duration: 0.15 }}
                             >
-                                <IoIosClose size={28} />
+                                <IoIosClose size={22} />
                                 Close
                             </motion.button>
                         </div>
 
-                        <div className="flex-1 overflow-y-auto w-full lg:w-[70%] md:p-6 ml-auto relative z-10">
-                            <Timeline>
-                                <TimelineItem className="flex w-full p-4" sx={{ '&::before': { display: 'none' } }}>
+                        {/* Scrollable timeline — hidden scrollbar */}
+                        <div
+                            className="flex-1 relative z-10 pl-6 pr-4 py-6"
+                            style={{ overflowY: "scroll", scrollbarWidth: "none", msOverflowStyle: "none" }}
+                        >
+                            <style>{`div::-webkit-scrollbar { display: none; }`}</style>
+                            <Timeline sx={{ padding: 0, margin: 0 }}>
+                                {/* First static entry */}
+                                <TimelineItem sx={{ '&::before': { display: 'none' }, py: '6px' }}>
                                     <TimelineSeparator>
-                                        <TimelineDot />
-                                        <TimelineConnector />
+                                        <TimelineDot sx={{ bgcolor: '#52525b', boxShadow: 'none', margin: '4px 0' }} />
+                                        <TimelineConnector sx={{ bgcolor: '#3f3f46' }} />
                                     </TimelineSeparator>
-                                    <TimelineContent className="flex-1 flex flex-col gap-1">
-                                        <span className="text-zinc-400">2023</span>
-                                        <button className="block w-full text-center px-8 py-4 rounded-lg bg-gray-500 text-white">
+                                    <TimelineContent sx={{ pb: 2, pt: 0 }}>
+                                        <p className="text-xs text-zinc-500 mb-1.5">2023</p>
+                                        <div className="w-full text-center px-6 py-3 rounded-xl
+                                                        bg-zinc-700/50 text-zinc-400 text-sm">
                                             React Portfolio 1.0
-                                        </button>
+                                        </div>
                                     </TimelineContent>
                                 </TimelineItem>
-                                {VERSIONS.map((version) => (
 
-                                    <TimelineItem key={version.id} className="flex w-full p-4" sx={{ '&::before': { display: 'none' } }}>
-                                        {/* text-zinc-500 */}
+                                {/* Dynamic versions */}
+                                {VERSIONS.map((version) => (
+                                    <TimelineItem
+                                        key={version.id}
+                                        sx={{ '&::before': { display: 'none' }, py: '6px' }}
+                                    >
                                         <TimelineSeparator>
-                                            <TimelineDot />
-                                            <TimelineConnector />
+                                            <TimelineDot sx={{ bgcolor: '#3b82f6', boxShadow: 'none', margin: '4px 0' }} />
+                                            <TimelineConnector sx={{ bgcolor: '#3f3f46' }} />
                                         </TimelineSeparator>
-                                        <TimelineContent className="flex-1 flex flex-col gap-1">
-                                            <span className="text-zinc-400">{version.time}</span>
+                                        <TimelineContent sx={{ pb: 2, pt: 0 }}>
+                                            <p className="text-xs text-zinc-500 mb-1.5">{version.time}</p>
                                             <motion.a
                                                 href={version.link}
                                                 target="_blank"
-                                                className="block w-full text-center px-8 py-4 rounded-lg bg-blue-500 text-white"
-                                                whileHover={{
-                                                    scale: 1.05,
-                                                    backgroundColor: "#2563eb", // Tailwind bg-blue-600
-                                                }}
+                                                rel="noopener noreferrer"
+                                                className="block w-full text-center px-6 py-3
+                                                           rounded-xl bg-blue-600 text-white text-sm"
+                                                whileHover={{ scale: 1.03, backgroundColor: "#2563eb" }}
                                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                             >
                                                 {version.name}
@@ -145,17 +158,22 @@ export default function FooterModal() {
                                         </TimelineContent>
                                     </TimelineItem>
                                 ))}
-                                <TimelineItem className="flex w-full p-4" sx={{ '&::before': { display: 'none' } }}>
-                                    {/* text-zinc-500 */}
+
+                                {/* Current — no connector below */}
+                                <TimelineItem sx={{ '&::before': { display: 'none' }, py: '6px' }}>
                                     <TimelineSeparator>
-                                        <TimelineDot variant="outlined" />
+                                        <TimelineDot
+                                            variant="outlined"
+                                            sx={{ borderColor: '#3b82f6', boxShadow: 'none', margin: '4px 0' }}
+                                        />
                                     </TimelineSeparator>
-                                    <TimelineContent className="flex-1 flex flex-col gap-1">
-                                        <span className="text-zinc-400">Current</span>
+                                    <TimelineContent sx={{ pb: 0, pt: 0 }}>
+                                        <p className="text-xs text-zinc-500 mb-1.5">Current</p>
                                         <motion.button
                                             onClick={closeModal}
-                                            className="w-full block px-8 py-4 rounded-lg bg-blue-500 text-white"
-                                            whileHover={{ scale: 1.1, backgroundColor: "#2563eb" }}
+                                            className="w-full px-6 py-3 rounded-xl
+                                                       bg-blue-600 text-white text-sm"
+                                            whileHover={{ scale: 1.03, backgroundColor: "#2563eb" }}
                                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                         >
                                             React Portfolio 2.0
@@ -167,6 +185,6 @@ export default function FooterModal() {
                     </motion.div>
                 </Modal>
             </div>
-        </section >
-    )
+        </section>
+    );
 }
