@@ -152,11 +152,11 @@ export function Projects({ visible }) {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             {/* bg-zinc-50/40 ring-zinc-200/50*/}
-            <div className="relative basis-1/2 flex-shrink-0 rounded-2xl p-1 
-                  ring-1  ring-inset bg-zinc-950/40 ring-zinc-800/50">
+            <div className="relative basis-1/3 flex-shrink-0 rounded-2xl p-1 
+              ring-1 ring-inset bg-zinc-950/40 ring-zinc-800/50">
               <img src={project.image} alt={project.name} className="object-cover w-full h-full rounded-xl" />
             </div>
-            <div className="px-1 flex flex-col md:basis-1/2 justify-center gap-4 mt-4 md:mt-0">
+            <div className="px-1 flex flex-col flex-1 justify-center gap-4 mt-4 md:mt-0">
               {/* text-zinc-900 */}
               <div className="font-base relative inline-block font-[450] text-zinc-50">
                 {project.name}
@@ -171,8 +171,7 @@ export function Projects({ visible }) {
                 {project.tools.map((tool) => (
                   <span
                     key={tool}
-                    // bg-zinc-200/70 text-zinc-700
-                    className="rounded-full bg-zinc-800/70 px-3 py-1 text-sm text-zinc-300 border border-blue-600"
+                    className="rounded-full bg-blue-500/10 px-3 py-1 text-xs text-blue-400 border border-blue-500/25"
                   >
                     {tool}
                   </span>

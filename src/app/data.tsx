@@ -148,12 +148,21 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCES: WorkExperience[] = [
   {
+    company: 'Linden Digital Marketing',
+    title: 'Design Co-Op',
+    description: 'Developed and designed client websites on WordPress and Shopify using CSS, PHP, and JavaScript; implemented plugins and managed database-backed functionality. Supported the full client lifecycle from requirements gathering through launch, ensuring performance, responsiveness, and accessibility. Collaborated with cross-functional teams to deliver experiences across web, social, email, and print campaigns.',
+    start: '2026',
+    end: 'Present',
+    id: 'work1',
+    tools: ['WordPress', 'Shopify', 'Project Management'],
+  },
+  {
     company: 'RIT Software Engineering',
     title: 'Course Assistant',
     description: 'Provide timely and constructive feedback for over 600 assignments, and support the grading process by maintaining accurate records and inputting into the university grading system. Offer additional academic support to 30 students during class and with clarification of Python course topics.',
     start: '2023',
-    end: 'Present',
-    id: 'work1',
+    end: '2025',
+    id: 'work2',
     tools: ['Python', 'Peer Tutoring', 'Instructional Support'],
   },
   {
@@ -162,7 +171,7 @@ export const WORK_EXPERIENCES: WorkExperience[] = [
     description: 'Worked with the Engineering QA team on converting over 25 automated test cases from front-end-based Silk4Net testing to back-end-based in-house API system tests. Utilized systems such as Jira/Confluence, TeamCity, and Perforce to stay updated with information, software, and files. Advanced financial domain knowledge familiarizing with software products produced and their interfaces.',
     start: '2024',
     end: '2024',
-    id: 'work2',
+    id: 'work3',
     tools: ['Software Testing', 'Silk4Net', 'Cucumber'],
   },
   {
@@ -171,7 +180,7 @@ export const WORK_EXPERIENCES: WorkExperience[] = [
     description: 'Worked on a functional robotic arm; designed in Autodesk Inventor, 3D printed on Makerbot Replicator, coded and circuited with Arduino software in a collaborative team of three. Managed the project process with documentation and effective communication with employers throughout the year-long process.',
     start: '2021',
     end: '2022',
-    id: 'work3',
+    id: 'work4',
     tools: ['Arduino', '3D Printing', 'Autodesk Inventor'],
   },
 ]
