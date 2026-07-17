@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
     name: 'A Note To You',
     description:
       'An online platform developed in partnership with a local arts organization featuring anonymous notes written by students. The project blends thoughtful content with community outreach.',
-    link: 'https://anotetoyou.cad.rit.edu/',
+    link: 'http://anotetoyou.page.gd/',
     image: '/images/anotetoyou-mockup.png',
     hero: '/images/anotetoyou-mockup.png',
     tools: ['JavaScript', 'Bootstrap', 'HTML/CSS'],

@@ -101,7 +101,7 @@ export default function ProjectsTable() {
         {
             year: "* 2025",
             project: "A Note To You",
-            href: "https://anotetoyou.cad.rit.edu/",
+            href: "http://anotetoyou.page.gd/",
             context: "Art Leadership",
             info: "Platform for community arts using Bootstrap, JS, etc.",
         },
