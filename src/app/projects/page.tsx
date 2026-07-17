@@ -60,18 +60,10 @@ export default function ProjectsTable() {
 
     const IN_DEV: Project[] = [
         {
-            year: "2025",
-            project: "BirdBox Monitor",
-            context: "Senior Capstone",
-            info: "Building a bird box monitor for occupation and nesting data collection. Full project process from requirements gathering to hardware and software integration for sponsor.",
-        },
-        {
-            year: "2025",
-            project: "You're the Hamster",
-            href: "/hamster",
-            internal: true,
-            context: "Personal",
-            info: "Based on facial and pose tracking, the program maps unto a set of \"hamster\" images. Built using TouchDesigner, still working on the facial bounds for accuracy.",
+            year: "2026",
+            project: "Client Work",
+            context: "@ LDM",
+            info: "COMING SOON",
         },
         // <tr>
         //     <td className="border px-4 py-2">2025</td>
@@ -86,6 +78,20 @@ export default function ProjectsTable() {
     ]
 
     const PAST: Project[] = [
+        {
+            year: "2025",
+            project: "BirdBox Monitor",
+            context: "Senior Capstone",
+            info: "Building a bird box monitor for occupation and nesting data collection. Full project process from requirements gathering to hardware and software integration for sponsor.",
+        },
+        {
+            year: "2025",
+            project: "You're the Hamster",
+            href: "/hamster",
+            internal: true,
+            context: "Personal",
+            info: "Based on facial and pose tracking, the program maps unto a set of \"hamster\" images. Built using TouchDesigner, still working on the facial bounds for accuracy.",
+        },
         {
             year: "2025",
             project: "GreenSphere",

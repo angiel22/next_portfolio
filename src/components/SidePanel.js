@@ -88,7 +88,7 @@ export default function SidePanel({ activeMenuItem, onMenuItemClick }) {
                         </motion.a>
 
                         <motion.a
-                            href="/Li_Resume.pdf"
+                            href="/Li_Resume_26.pdf"
                             download
                             whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 0.9 }}
